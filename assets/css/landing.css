@@ -1,6 +1,5 @@
 /* ============================================================
-   LANDING PAGE OVERLAY — Registre d'Appel Numérique
-   Premium glassmorphism design with animated elements
+   LANDING PAGE — Registre d'Appel Numérique
    ============================================================ */
 
 /* === CSS VARIABLES === */
@@ -45,6 +44,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .landing-bg::before {
@@ -105,74 +105,48 @@
   font-size: 2rem;
   opacity: 0.15;
   animation: floatElement 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.floating-book-1 {
-  top: 15%;
-  left: 5%;
-  animation-delay: 0s;
-}
+.floating-el-1 { top: 15%; left: 5%; }
+.floating-el-2 { top: 70%; right: 8%; }
+.floating-el-3 { top: 25%; right: 15%; font-size: 3rem; color: var(--lp-primary); }
+.floating-el-4 { bottom: 30%; left: 10%; font-size: 2.5rem; color: var(--lp-secondary); }
+.floating-el-5 { top: 60%; left: 20%; font-size: 2rem; color: var(--lp-accent); }
+.floating-el-6 { bottom: 15%; right: 20%; }
+.floating-el-7 { top: 40%; left: 3%; }
 
-.floating-book-2 {
-  top: 70%;
-  right: 8%;
-  animation-delay: 2s;
-}
-
-.floating-letter-1 {
-  top: 25%;
-  right: 15%;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--lp-primary);
-  animation-delay: 1s;
-}
-
-.floating-letter-2 {
-  bottom: 30%;
-  left: 10%;
-  font-size: 2.5rem;
-  color: var(--lp-secondary);
-  animation-delay: 3s;
-}
-
-.floating-letter-3 {
-  top: 60%;
-  left: 20%;
-  font-size: 2rem;
-  color: var(--lp-accent);
-  animation-delay: 0.5s;
-}
-
-.floating-plant {
-  bottom: 15%;
-  right: 20%;
-  animation-delay: 1.5s;
-}
-
-.floating-notebook {
-  top: 40%;
-  left: 3%;
-  animation-delay: 2.5s;
-}
-
-/* === MAIN CONTENT LAYOUT === */
+/* ============================================================
+   HERO SECTION — CSS Grid layout
+   ============================================================ */
 .landing-content {
   position: relative;
   z-index: 2;
-  display: flex;
-  min-height: 100vh;
-  padding: 60px 80px;
-  gap: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: center;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-block: 60px;
+  padding-inline: clamp(24px, 5vw, 64px);
 }
 
 .landing-left {
-  flex: 1;
-  max-width: 580px;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.landing-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
+  min-width: 0;
 }
 
 /* === BADGES === */
@@ -206,7 +180,7 @@
 /* === TITLE === */
 .landing-title {
   font-family: 'Playfair Display', 'Noto Naskh Arabic', Georgia, serif;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--lp-text);
@@ -214,14 +188,10 @@
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
-.landing-title br {
-  display: block;
-}
-
 /* === ARABIC SUBTITLE === */
 .landing-subtitle-ar {
   font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 600;
   color: var(--lp-primary);
   direction: rtl;
@@ -230,7 +200,7 @@
 
 /* === DESCRIPTION === */
 .landing-description {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   line-height: 1.7;
   color: var(--lp-text-secondary);
   animation: fadeInUp 0.8s ease-out 0.4s backwards;
@@ -240,12 +210,12 @@
 .landing-welcome-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 24px;
+  gap: 16px;
+  padding: 20px;
   background: var(--lp-glass);
   backdrop-filter: var(--lp-blur);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 24px;
+  border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   animation: fadeInUp 0.8s ease-out 0.5s backwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -257,8 +227,8 @@
 }
 
 .welcome-avatar {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, #10B981, #059669);
   display: flex;
@@ -266,69 +236,47 @@
   justify-content: center;
   color: #fff;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
-.welcome-info h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.welcome-ar {
-  font-family: 'Noto Sans Arabic';
-  color: var(--lp-primary);
-  font-size: 0.9rem;
-}
-
-.welcome-role {
-  color: var(--lp-text-secondary);
-  font-size: 0.85rem;
-  margin: 0;
-}
-
 .welcome-name {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   display: block;
 }
 
 .welcome-name-ar {
-  font-family: 'Noto Sans Arabic';
+  font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
   color: var(--lp-primary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
+  margin-inline-start: 6px;
+}
+
+.welcome-role {
+  color: var(--lp-text-secondary);
+  font-size: 0.85rem;
+  margin: 2px 0 0;
 }
 
 .welcome-year {
   color: var(--lp-text-secondary);
   font-size: 0.8rem;
-  margin: 0;
-}
-
-.welcome-school {
-  color: var(--lp-text-secondary);
-  font-size: 0.8rem;
-  margin: 0;
-}
-
-.landing-actions {
-  display: flex;
-  gap: 16px;
-  animation: fadeInUp 0.8s ease-out 0.6s backwards;
+  margin: 2px 0 0;
 }
 
 /* === BUTTONS === */
-.landing-buttons {
+.landing-actions {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
   animation: fadeInUp 0.8s ease-out 0.6s backwards;
 }
 
 .landing-btn {
-  padding: 16px 36px;
+  padding: 14px 32px;
   border-radius: 16px;
   font-size: 1rem;
   font-weight: 600;
@@ -340,6 +288,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .landing-btn-primary {
@@ -385,27 +334,17 @@
   transition: 0s;
 }
 
-/* === RIGHT SECTION === */
-.landing-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 500px;
-}
-
 /* === SMART BOARD === */
 .smart-board {
-  position: relative;
-  width: 420px;
+  width: 100%;
+  max-width: 400px;
   animation: fadeInRight 1s ease-out 0.4s backwards;
 }
 
 .smart-board-screen {
   background: linear-gradient(135deg, #10B981 0%, #064E3B 100%);
   border-radius: 20px;
-  padding: 40px 32px;
+  padding: 32px 28px;
   color: #fff;
   box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3);
   position: relative;
@@ -425,14 +364,14 @@
 
 .smart-board-screen h2 {
   font-family: 'Playfair Display', 'Noto Naskh Arabic', Georgia, serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 700;
   margin: 0 0 4px;
   animation: fadeInUp 0.6s ease-out 0.8s backwards;
 }
 
 .smart-board-screen p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   opacity: 0.9;
   margin: 0 0 4px;
   animation: fadeInUp 0.6s ease-out 0.9s backwards;
@@ -440,13 +379,13 @@
 
 .board-subtitle {
   font-weight: 600;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
   opacity: 1 !important;
   animation-delay: 1s !important;
 }
 
 .board-desc {
-  font-size: 0.85rem !important;
+  font-size: 0.8rem !important;
   opacity: 0.7 !important;
   animation-delay: 1.1s !important;
 }
@@ -455,36 +394,15 @@
 .board-preview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 20px;
   animation: fadeInUp 0.6s ease-out 1.2s backwards;
-}
-
-.preview-stat {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 16px 12px;
-  text-align: center;
-  backdrop-filter: blur(8px);
-}
-
-.preview-stat-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  display: block;
-}
-
-.preview-stat-label {
-  font-size: 0.7rem;
-  opacity: 0.8;
-  display: block;
-  margin-top: 2px;
 }
 
 .board-stat {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 12px;
-  padding: 16px 12px;
+  padding: 12px 8px;
   text-align: center;
   backdrop-filter: blur(8px);
   display: flex;
@@ -493,14 +411,14 @@
 }
 
 .board-stat-number {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   display: block;
   color: #fff;
 }
 
 .board-stat-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   opacity: 0.8;
   display: block;
   margin-top: 2px;
@@ -509,11 +427,8 @@
 
 /* === TEACHER IMAGE === */
 .landing-teacher {
-  position: absolute;
-  bottom: -20px;
-  right: -30px;
-  width: 320px;
-  z-index: 3;
+  width: 100%;
+  max-width: 280px;
   animation: fadeInUp 1s ease-out 0.6s backwards,
              floatTeacher 4s ease-in-out infinite 1.5s;
 }
@@ -595,240 +510,30 @@
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* === KEYFRAME ANIMATIONS === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes floatElement {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-15px) rotate(3deg);
-  }
-  66% {
-    transform: translateY(-8px) rotate(-2deg);
-  }
-}
-
-@keyframes particleFloat {
-  0%, 100% {
-    transform: translate(0, 0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translate(20px, -30px);
-    opacity: 0.6;
-  }
-}
-
-@keyframes raysMove {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes shimmer {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(1.1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes floatTeacher {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes teacherBreathe {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* === RESPONSIVE BREAKPOINTS === */
-@media (max-width: 1200px) {
-  .landing-content {
-    padding: 40px 48px;
-    gap: 48px;
-  }
-
-  .landing-title {
-    font-size: 2.8rem;
-  }
-
-  .smart-board {
-    width: 360px;
-  }
-
-  .landing-teacher {
-    width: 260px;
-  }
-}
-
-@media (max-width: 992px) {
-  .landing-content {
-    flex-direction: column;
-    padding: 40px 32px;
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .landing-left {
-    max-width: 100%;
-  }
-
-  .landing-right {
-    min-height: 400px;
-  }
-
-  .smart-board {
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .landing-teacher {
-    width: 200px;
-    bottom: -10px;
-    right: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .landing-content {
-    padding: 24px 20px;
-    gap: 32px;
-  }
-
-  .landing-title {
-    font-size: 2rem;
-  }
-
-  .landing-subtitle-ar {
-    font-size: 1.2rem;
-  }
-
-  .smart-board-screen {
-    padding: 24px 20px;
-  }
-
-  .smart-board-screen h2 {
-    font-size: 1.8rem;
-  }
-
-  .board-preview {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-
-  .landing-buttons {
-    flex-direction: column;
-  }
-
-  .landing-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 576px) {
-  .landing-title {
-    font-size: 1.75rem;
-  }
-
-  .landing-badge-group {
-    gap: 4px;
-  }
-
-  .landing-badge {
-    font-size: 0.65rem;
-    padding: 4px 10px;
-  }
-
-  .landing-welcome-card {
-    padding: 16px;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .landing-teacher {
-    width: 160px;
-  }
-
-  .floating-element {
-    display: none;
-  }
-}
-
-/* === PRINT STYLES === */
-@media print {
-  .landing-page {
-    display: none !important;
-  }
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+.landing-section-wrapper {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
 }
 
 /* ============================================================
-   LANDING PAGE — FEATURES SECTION
+   FEATURES SECTION
    ============================================================ */
-
 .landing-features {
   position: relative;
   z-index: 2;
-  padding: 80px 80px;
-  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.6) 100%);
+  padding-block: 80px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
 }
 
 .landing-features-title {
   font-family: 'Playfair Display', 'Noto Naskh Arabic', Georgia, serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 700;
   color: var(--lp-text);
   text-align: center;
@@ -846,8 +551,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .landing-feature-card {
@@ -855,7 +558,7 @@
   backdrop-filter: var(--lp-blur);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  padding: 32px 24px;
+  padding: 28px 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 0.6s ease-out backwards;
@@ -872,18 +575,18 @@
 }
 
 .landing-feature-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin: 0 auto 16px;
 }
 
 .landing-feature-title {
   font-family: 'Playfair Display', 'Noto Naskh Arabic', Georgia, serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--lp-text);
   margin-bottom: 8px;
@@ -897,13 +600,15 @@
 }
 
 /* ============================================================
-   LANDING PAGE — SMART BOARD DEMO SECTION
+   SMART BOARD DEMO SECTION
    ============================================================ */
-
 .landing-smartboard-section {
   position: relative;
   z-index: 2;
-  padding: 60px 80px 80px;
+  padding-block: 60px 80px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
 }
 
 .landing-smartboard-demo {
@@ -911,33 +616,33 @@
   margin: 0 auto;
   background: linear-gradient(135deg, #10B981 0%, #064E3B 100%);
   border-radius: 24px;
-  padding: 32px;
+  padding: 28px;
   box-shadow: 0 20px 60px rgba(16, 185, 129, 0.25);
 }
 
 .landing-demo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
 .landing-demo-cell {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
+  gap: 6px;
+  padding: 8px 10px;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
-  border-radius: 12px;
+  border-radius: 10px;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .demo-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -949,7 +654,7 @@
 .landing-demo-legend {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .legend-item {
@@ -961,19 +666,21 @@
 }
 
 .legend-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
 }
 
 /* ============================================================
-   LANDING PAGE — TEACHER PROFILE TEASER
+   TEACHER PROFILE TEASER
    ============================================================ */
-
 .landing-profile-section {
   position: relative;
   z-index: 2;
-  padding: 40px 80px 60px;
+  padding-block: 40px 60px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
 }
 
 .landing-profile-card {
@@ -983,10 +690,10 @@
   backdrop-filter: var(--lp-blur);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 24px;
-  padding: 40px;
+  padding: 32px;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1003,11 +710,12 @@
 
 .landing-profile-info {
   flex: 1;
+  min-width: 0;
 }
 
 .landing-profile-info h3 {
   font-family: 'Playfair Display', 'Noto Naskh Arabic', Georgia, serif;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--lp-text);
   margin: 0 0 4px;
@@ -1015,31 +723,30 @@
 
 .landing-profile-info h3 span {
   font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--lp-primary);
   font-weight: 500;
 }
 
 .landing-profile-info p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--lp-text-secondary);
 }
 
 .landing-profile-location {
   margin-top: 4px !important;
   font-size: 0.8rem !important;
-  color: var(--text-tertiary) !important;
+  color: var(--lp-text-secondary) !important;
 }
 
 /* ============================================================
-   LANDING PAGE — FOOTER
+   FOOTER
    ============================================================ */
-
 .landing-footer {
   position: relative;
   z-index: 2;
-  padding: 24px 80px;
+  padding-block: 24px;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
   background: rgba(255, 255, 255, 0.4);
 }
@@ -1048,8 +755,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(24px, 5vw, 64px);
 }
 
 .landing-footer-brand {
@@ -1082,21 +790,121 @@
 }
 
 /* ============================================================
-   RESPONSIVE — LANDING SECTIONS
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes floatElement {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(3deg); }
+  66% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes particleFloat {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  50% { transform: translate(20px, -30px); opacity: 0.6; }
+}
+
+@keyframes raysMove {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(-20px, 20px) scale(1.1); opacity: 0.8; }
+}
+
+@keyframes floatTeacher {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes teacherBreathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* ============================================================
+   RESPONSIVE — HERO
    ============================================================ */
 
-@media (max-width: 1200px) {
-  .landing-features,
-  .landing-smartboard-section,
-  .landing-profile-section,
-  .landing-footer {
-    padding-inline-start: 48px;
-    padding-inline-end: 48px;
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .landing-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+    padding-block: 80px 40px;
+  }
+
+  .landing-left {
+    max-width: 600px;
+    margin-inline: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .landing-badge-group {
+    justify-content: center;
+  }
+
+  .landing-actions {
+    justify-content: center;
+  }
+
+  .landing-right {
+    max-width: 440px;
+    margin-inline: auto;
   }
 }
 
-@media (max-width: 992px) {
+/* Tablet portrait */
+@media (max-width: 768px) {
+  .landing-content {
+    padding-block: 60px 32px;
+    gap: 32px;
+  }
+
+  .landing-title {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .landing-welcome-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .landing-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .landing-features {
+    padding-block: 48px;
+  }
+
   .landing-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-smartboard-section {
+    padding-block: 40px 48px;
+  }
+
+  .landing-smartboard-demo {
+    padding: 20px;
+  }
+
+  .landing-demo-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1110,65 +918,90 @@
     gap: 12px;
     text-align: center;
   }
-
-  .landing-features,
-  .landing-smartboard-section,
-  .landing-profile-section,
-  .landing-footer {
-    padding-inline-start: 32px;
-    padding-inline-end: 32px;
-  }
 }
 
-@media (max-width: 768px) {
+/* Mobile */
+@media (max-width: 576px) {
+  .landing-content {
+    padding-block: 48px 24px;
+    gap: 24px;
+  }
+
+  .landing-badge {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+
+  .landing-welcome-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .landing-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .landing-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+
+  .smart-board-screen {
+    padding: 24px 20px;
+  }
+
+  .board-preview {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .board-stat {
+    padding: 8px 4px;
+  }
+
+  .board-stat-number {
+    font-size: 1.1rem;
+  }
+
+  .landing-teacher {
+    max-width: 200px;
+  }
+
   .landing-features-grid {
     grid-template-columns: 1fr;
     max-width: 400px;
+    margin-inline: auto;
   }
 
-  .landing-demo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .landing-features-title {
-    font-size: 1.6rem;
-  }
-
-  .landing-features,
-  .landing-smartboard-section,
-  .landing-profile-section {
-    padding-inline-start: 20px;
-    padding-inline-end: 20px;
-  }
-
-  .landing-footer {
-    padding-inline-start: 20px;
-    padding-inline-end: 20px;
-  }
-}
-
-@media (max-width: 576px) {
   .landing-demo-grid {
     grid-template-columns: 1fr;
   }
 
-  .landing-smartboard-demo {
+  .landing-profile-card {
     padding: 20px;
+    gap: 16px;
   }
 
-  .landing-profile-card {
-    padding: 24px;
-    gap: 20px;
+  .landing-profile-avatar svg {
+    width: 80px;
+    height: 80px;
   }
 
   .landing-footer-center {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .floating-element {
+    display: none;
+  }
 }
 
 /* ============================================================
-   SPLASH SCREEN — Premium animated entrance
+   SPLASH SCREEN
    ============================================================ */
 
 .splash-screen {
@@ -1205,6 +1038,7 @@
   align-items: center;
   gap: 20px;
   text-align: center;
+  padding-inline: 24px;
   animation: splashFadeIn 0.6s ease-out;
 }
 
