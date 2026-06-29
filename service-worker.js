@@ -1,4 +1,4 @@
-const CACHE_NAME = 'registre-v2';
+const CACHE_NAME = 'registre-v3';
 
 const STATIC_ASSETS = [
     './',
@@ -28,6 +28,7 @@ const STATIC_ASSETS = [
     './assets/js/pages/register.js',
     './assets/js/pages/statistics.js',
     './assets/js/pages/settings.js',
+    './assets/js/pages/about.js',
     './assets/js/pages/profile.js',
     './assets/js/app.js',
     './assets/js/landing.js',

@@ -412,6 +412,14 @@
     display: none !important;
   }
 
+  .splash-screen,
+  .landing-page,
+  .offline-banner,
+  .sync-indicator,
+  .install-prompt {
+    display: none !important;
+  }
+
   @page {
     size: A4 landscape;
     margin: 15mm;

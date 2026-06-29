@@ -60,7 +60,7 @@ window.App.Pages.Dashboard = (function () {
       '</div>' +
 
       /* ── 3. Stats Grid ────────────────────────────────── */
-      '<div id="dashboard-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5)"></div>' +
+      '<div id="dashboard-stats" role="status" aria-live="polite" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-5)"></div>' +
 
       /* ── 4. Charts Row ────────────────────────────────── */
       '<div style="display:grid;grid-template-columns:2fr 1fr;gap:var(--space-6)">' +
@@ -79,7 +79,15 @@ window.App.Pages.Dashboard = (function () {
       '</div>' +
 
       /* ── 5. Bottom Row ────────────────────────────────── */
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-6)">' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-6)">' +
+
+        /* Calendar Mini-View */
+        '<div class="chart-container">' +
+          '<div class="chart-header">' +
+            '<span class="chart-title" style="display:inline-flex;align-items:center;gap:var(--space-2)"><span data-lucide="calendar-days" style="width:18px;height:18px;color:var(--info)"></span>' + window.App.Dates.getMonthName(now.getMonth(), lang) + ' ' + now.getFullYear() + '</span>' +
+          '</div>' +
+          '<div id="dashboard-calendar" style="min-height:200px"></div>' +
+        '</div>' +
 
         /* Quick Actions */
         '<div class="chart-container">' +
@@ -135,6 +143,7 @@ window.App.Pages.Dashboard = (function () {
     loadRecentActivity();
     initCharts();
     setupQuickActions();
+    loadCalendarMini();
   }
 
   function loadWelcome() {
@@ -176,13 +185,14 @@ window.App.Pages.Dashboard = (function () {
               '<i data-lucide="' + s.icon + '" style="width:22px;height:22px;color:#fff"></i>' +
             '</div>' +
           '</div>' +
-          '<div style="font-size:var(--text-3xl);font-weight:var(--font-bold);color:var(--text);line-height:1;margin-bottom:var(--space-1)">' + s.value + '</div>' +
+          '<div style="font-size:var(--text-3xl);font-weight:var(--font-bold);color:var(--text);line-height:1;margin-bottom:var(--space-1)" data-count="' + s.value + '">' + s.value + '</div>' +
           '<div style="font-size:var(--text-xs);color:var(--text-secondary);font-weight:var(--font-medium)">' + s.label + '</div>' +
         '</div>';
       });
 
       el.innerHTML = html;
       if (window.lucide) lucide.createIcons();
+      animateCounters();
       window.App.Loading.hide();
     }).catch(function () {
       window.App.Loading.hide();
@@ -367,6 +377,68 @@ window.App.Pages.Dashboard = (function () {
         }
       });
     }).catch(function () {});
+  }
+
+  function animateCounters() {
+    var counterEls = document.querySelectorAll('#dashboard-stats [data-count]');
+    counterEls.forEach(function(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      if (isNaN(target) || target === 0) return;
+      var duration = 1200;
+      var start = 0;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.floor(eased * target);
+        el.textContent = current;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+
+      el.textContent = '0';
+      requestAnimationFrame(step);
+    });
+  }
+
+  function loadCalendarMini() {
+    var calEl = document.getElementById('dashboard-calendar');
+    if (!calEl) return;
+
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth();
+    var today = now.getDate();
+    var firstDay = new Date(year, month, 1).getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+    var lang = window.App.I18n.getLanguage();
+    var dayNames = lang === 'ar'
+      ? ['أحد', 'اثن', 'ثلا', 'أرب', 'خمي', 'جمع', 'سبت']
+      : ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+
+    var html = '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px">';
+    dayNames.forEach(function(d) {
+      html += '<div style="text-align:center;font-size:10px;font-weight:600;color:var(--text-tertiary);padding:4px 0">' + d + '</div>';
+    });
+
+    for (var i = 0; i < firstDay; i++) {
+      html += '<div></div>';
+    }
+
+    for (var d = 1; d <= daysInMonth; d++) {
+      var isToday = d === today;
+      var bg = isToday ? 'var(--primary)' : 'transparent';
+      var color = isToday ? '#fff' : 'var(--text)';
+      var fw = isToday ? '700' : '400';
+      html += '<div style="text-align:center;padding:6px 0;font-size:12px;font-weight:' + fw + ';color:' + color + ';background:' + bg + ';border-radius:8px;cursor:default">' + d + '</div>';
+    }
+    html += '</div>';
+    calEl.innerHTML = html;
   }
 
   function setupQuickActions() {

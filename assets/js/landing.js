@@ -1,24 +1,80 @@
 window.App = window.App || {};
 
 window.App.Landing = (function() {
+  var splashEl = null;
   var landingEl = null;
   var loadingEl = null;
   var progressBar = null;
 
   function init() {
+    splashEl = document.getElementById('splash-screen');
     landingEl = document.getElementById('landing-page');
-    if (!landingEl) return;
+
+    if (!splashEl && !landingEl) return;
 
     if (sessionStorage.getItem('landing_seen')) {
-      landingEl.style.display = 'none';
+      if (splashEl) splashEl.style.display = 'none';
+      if (landingEl) landingEl.style.display = 'none';
       return;
     }
 
-    loadingEl = document.getElementById('landing-loading');
-    progressBar = document.getElementById('loading-progress');
+    document.body.style.overflow = 'hidden';
+
+    if (splashEl) {
+      splashEl.style.display = 'flex';
+      splashEl.setAttribute('aria-hidden', 'false');
+      runSplash(function() {
+        showLanding();
+      });
+    } else {
+      showLanding();
+    }
+  }
+
+  function runSplash(callback) {
+    var titleEl = document.getElementById('splash-title');
+    var barEl = document.getElementById('splash-progress-bar');
+    var titleText = 'Registre d\'Appel Numérique';
+    var charIndex = 0;
+
+    function typeChar() {
+      if (charIndex < titleText.length && titleEl) {
+        titleEl.textContent += titleText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeChar, 50 + Math.random() * 30);
+      }
+    }
+
+    setTimeout(typeChar, 600);
+
+    setTimeout(function() {
+      if (barEl) barEl.style.width = '100%';
+    }, 800);
+
+    setTimeout(function() {
+      if (splashEl) {
+        splashEl.classList.add('hidden');
+      }
+      setTimeout(function() {
+        if (splashEl) {
+          splashEl.style.display = 'none';
+          splashEl.setAttribute('aria-hidden', 'true');
+        }
+        if (callback) callback();
+      }, 600);
+    }, 2500);
+  }
+
+  function showLanding() {
+    if (!landingEl) {
+      document.body.style.overflow = '';
+      window.location.hash = '#/dashboard';
+      return;
+    }
 
     landingEl.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    loadingEl = document.getElementById('landing-loading');
+    progressBar = document.getElementById('loading-progress');
 
     createParticles();
     setupButtons();

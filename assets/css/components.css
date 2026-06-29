@@ -79,14 +79,14 @@
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--secondary), #1D4ED8);
+  background: linear-gradient(135deg, var(--secondary), #1B3A9E);
   color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(37, 99, 235, 0.25);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(29, 78, 216, 0.25);
 }
 
 .btn-secondary:hover {
   background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(29, 78, 216, 0.3);
   transform: translateY(-2px);
 }
 
@@ -160,14 +160,14 @@
 }
 
 .btn-info {
-  background: linear-gradient(135deg, var(--info), #1D4ED8);
+  background: linear-gradient(135deg, var(--info), #1B3A9E);
   color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(37, 99, 235, 0.25);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(29, 78, 216, 0.25);
 }
 
 .btn-info:hover {
   background: linear-gradient(135deg, var(--info-light), var(--info));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(29, 78, 216, 0.3);
   transform: translateY(-2px);
 }
 
@@ -283,6 +283,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  contain: layout style;
 }
 
 .stat-card::before {
@@ -393,6 +394,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  contain: layout;
 }
 
 .table {
@@ -1716,8 +1718,8 @@ textarea.form-control {
 }
 
 /* ===========================
-   SECTION HEADER
-   =========================== */
+    SECTION HEADER
+    =========================== */
 
 .section-header {
   display: flex;
@@ -1737,4 +1739,117 @@ textarea.form-control {
   font-size: var(--text-sm);
   color: var(--text-secondary);
   margin-top: var(--space-1);
+}
+
+/* ===========================
+   OFFLINE BANNER
+   =========================== */
+
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-toast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* ===========================
+   SYNC INDICATOR
+   =========================== */
+
+.sync-indicator {
+  position: fixed;
+  bottom: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-toast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+.sync-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ===========================
+   INSTALL PROMPT
+   =========================== */
+
+.install-prompt {
+  position: fixed;
+  bottom: var(--space-6);
+  inset-inline-end: var(--space-6);
+  z-index: var(--z-toast);
+  animation: slideUp var(--transition-slow) ease-out;
+}
+
+.install-prompt-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  max-width: 400px;
+}
+
+.install-prompt-icon {
+  flex-shrink: 0;
+}
+
+.install-prompt-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.install-prompt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .install-prompt {
+    inset-inline-start: var(--space-4);
+    inset-inline-end: var(--space-4);
+    bottom: var(--space-4);
+  }
+
+  .install-prompt-card {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
 }

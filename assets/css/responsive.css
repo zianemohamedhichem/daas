@@ -13,8 +13,9 @@
     grid-template-columns: 1fr;
   }
 
-  .dashboard-bottom {
-    grid-template-columns: 1fr;
+  .dashboard-bottom,
+  .page-dashboard > div:last-child {
+    grid-template-columns: 1fr 1fr !important;
   }
 
   .grid-4 {
@@ -216,6 +217,10 @@
 
   .grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .page-dashboard > div:last-child {
+    grid-template-columns: 1fr !important;
   }
 
   .page-header {

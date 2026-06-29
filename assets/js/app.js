@@ -22,6 +22,7 @@ window.App.Loading = null;
     '#/register': Pages.Register,
     '#/statistics': Pages.Statistics,
     '#/settings': Pages.Settings,
+    '#/about': Pages.About,
     '#/profile': Pages.Profile
   };
 
@@ -209,6 +210,72 @@ window.App.Loading = null;
     }
   }
 
+  function setupOfflineBanner() {
+    var banner = document.getElementById('offline-banner');
+    if (!banner) return;
+
+    function updateOnlineStatus() {
+      if (navigator.onLine) {
+        banner.style.display = 'none';
+      } else {
+        banner.style.display = 'flex';
+      }
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+  }
+
+  function setupInstallPrompt() {
+    var deferredPrompt = null;
+    var promptEl = document.getElementById('install-prompt');
+    var acceptBtn = document.getElementById('install-accept');
+    var dismissBtn = document.getElementById('install-dismiss');
+
+    if (!promptEl) return;
+
+    window.addEventListener('beforeinstallprompt', function(e) {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (!localStorage.getItem('install_dismissed')) {
+        setTimeout(function() {
+          promptEl.style.display = 'block';
+        }, 5000);
+      }
+    });
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', function() {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(function(choice) {
+            deferredPrompt = null;
+            promptEl.style.display = 'none';
+          });
+        }
+      });
+    }
+
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', function() {
+        promptEl.style.display = 'none';
+        localStorage.setItem('install_dismissed', '1');
+      });
+    }
+  }
+
+  function showSyncIndicator() {
+    var indicator = document.getElementById('sync-indicator');
+    if (indicator) {
+      indicator.style.display = 'flex';
+      clearTimeout(indicator._hideTimer);
+      indicator._hideTimer = setTimeout(function() {
+        indicator.style.display = 'none';
+      }, 2000);
+    }
+  }
+
   function seedDemoData() {
     return DB.count('classes').then(function (count) {
       if (count > 0) return;
@@ -310,6 +377,8 @@ window.App.Loading = null;
       setupGlobalSearch();
       setupKeyboardShortcuts();
       registerServiceWorker();
+      setupOfflineBanner();
+      setupInstallPrompt();
 
       return DB.get('settings', 'theme').then(function (result) {
         if (result && result.value) {

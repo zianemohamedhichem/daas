@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,7 +20,7 @@ body {
   font-weight: var(--font-normal);
   line-height: var(--leading-normal);
   color: var(--text);
-  background-color: #FAFAF5;
+  background-color: #FAFAF9;
   min-height: 100vh;
   overflow-x: hidden;
   transition: background-color var(--transition-base), color var(--transition-base);
@@ -127,6 +127,7 @@ table {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
   border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
 }
 
 ::placeholder {

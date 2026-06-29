@@ -819,10 +819,70 @@
 }
 
 /* ===========================
-   SEARCH INPUT
-   =========================== */
+    SEARCH INPUT
+    =========================== */
 
 [data-theme='dark'] .search-input i,
 [data-theme='dark'] .search-input svg {
+  color: #5A6B7D;
+}
+
+/* ===========================
+    ABOUT PAGE
+    =========================== */
+
+[data-theme='dark'] .about-card {
+  background: rgba(22, 32, 50, 0.7);
+  border-color: rgba(36, 51, 82, 0.5);
+}
+
+[data-theme='dark'] .about-tech-tag {
+  background: rgba(52, 211, 153, 0.12);
+  color: #34D399;
+}
+
+/* ===========================
+    OFFLINE BANNER
+    =========================== */
+
+[data-theme='dark'] .offline-banner {
+  background: linear-gradient(135deg, #D97706, #B45309);
+}
+
+/* ===========================
+    SYNC INDICATOR
+    =========================== */
+
+[data-theme='dark'] .sync-indicator {
+  background: rgba(22, 32, 50, 0.85);
+  border-color: rgba(36, 51, 82, 0.5);
+}
+
+/* ===========================
+    INSTALL PROMPT
+    =========================== */
+
+[data-theme='dark'] .install-prompt-card {
+  background: #162032;
+  border-color: #243352;
+}
+
+/* ===========================
+    SPLASH SCREEN
+    =========================== */
+
+[data-theme='dark'] .splash-screen {
+  background: linear-gradient(160deg, #0C1222 0%, #0F2027 40%, #0C1222 100%);
+}
+
+[data-theme='dark'] .splash-title {
+  color: #F0F4F8;
+}
+
+[data-theme='dark'] .splash-tagline {
+  color: #8899AA;
+}
+
+[data-theme='dark'] .splash-year {
   color: #5A6B7D;
 }

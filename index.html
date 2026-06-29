@@ -23,7 +23,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -39,6 +40,26 @@
     <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="splash-screen" aria-hidden="true">
+      <div class="splash-bg-pattern"></div>
+      <div class="splash-content">
+        <div class="splash-logo" id="splash-logo">
+          <svg viewBox="0 0 80 80" width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="38" stroke="#10B981" stroke-width="2.5" fill="none"/>
+            <text x="40" y="36" text-anchor="middle" dominant-baseline="central" fill="#10B981" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700">أ</text>
+            <text x="40" y="58" text-anchor="middle" dominant-baseline="central" fill="#1D4ED8" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="600">A</text>
+          </svg>
+        </div>
+        <h1 class="splash-title" id="splash-title"></h1>
+        <p class="splash-tagline" id="splash-tagline">سجل الحضور الذكي · Le Registre Intelligent</p>
+        <div class="splash-year">السنة الدراسية ٢٠٢٦–٢٠٢٧ / 2026–2027</div>
+        <div class="splash-progress">
+          <div class="splash-progress-bar" id="splash-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Landing Page Overlay -->
     <div id="landing-page" class="landing-page" style="display:none">
       <div class="landing-bg">
@@ -52,6 +73,8 @@
         <div class="floating-element floating-el-6">📚</div>
         <div class="floating-element floating-el-7">📖</div>
       </div>
+
+      <!-- Hero Section -->
       <div class="landing-content">
         <div class="landing-left">
           <div class="landing-badge-group">
@@ -62,14 +85,14 @@
             <span class="landing-badge">🐙 GitHub Pages</span>
           </div>
           <h1 class="landing-title">Registre d'Appel<br>Numérique</h1>
-          <p class="landing-subtitle-ar" dir="rtl">السجل الرقمي للحضور والغياب</p>
+          <p class="landing-subtitle-ar" dir="rtl" lang="ar">سجل الحضور الرقمي الذكي</p>
           <p class="landing-description">A modern digital attendance platform designed for Algerian primary schools.</p>
           <div class="landing-welcome-card">
             <div class="welcome-avatar">DS</div>
             <div class="welcome-info">
               <div class="welcome-name">Daas Saïda <span class="welcome-name-ar">دعاس سعيدة</span></div>
-              <div class="welcome-role">Enseignante &bull; École Primaire</div>
-              <div class="welcome-year">Année scolaire 2026-2027</div>
+              <div class="welcome-role">Enseignante · École Omar Hamroune</div>
+              <div class="welcome-year">Année scolaire 2026–2027</div>
             </div>
           </div>
           <div class="landing-actions">
@@ -111,6 +134,144 @@
           </div>
         </div>
       </div>
+
+      <!-- Features Section -->
+      <div class="landing-features" id="landing-features">
+        <h2 class="landing-features-title">Fonctionnalités</h2>
+        <p class="landing-features-subtitle">Tout ce dont vous avez besoin pour gérer vos présences</p>
+        <div class="landing-features-grid">
+          <div class="landing-feature-card">
+            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            </div>
+            <h3 class="landing-feature-title">Statistiques en temps réel</h3>
+            <p class="landing-feature-desc">Suivez la progression de vos classes avec des graphiques interactifs et des indicateurs clairs.</p>
+          </div>
+          <div class="landing-feature-card">
+            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#1D4ED8,#1B3A9E)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="landing-feature-title">Registre officiel PDF</h3>
+            <p class="landing-feature-desc">Exportez vos registres en PDF ou Excel, prêts pour l'inspection et la direction.</p>
+          </div>
+          <div class="landing-feature-card">
+            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#F59E0B,#D97706)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="landing-feature-title">Mobile-first PWA</h3>
+            <p class="landing-feature-desc">Installez l'application sur votre téléphone pour un accès rapide, même sans connexion.</p>
+          </div>
+          <div class="landing-feature-card">
+            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="landing-feature-title">Hors ligne</h3>
+            <p class="landing-feature-desc">Fonctionne parfaitement sans connexion internet. Toutes vos données restent sécurisées.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Board Section -->
+      <div class="landing-smartboard-section">
+        <h2 class="landing-features-title">Tableau de bord intelligent</h2>
+        <p class="landing-features-subtitle">Visualisez les présences en un clin d'œil</p>
+        <div class="landing-smartboard-demo">
+          <div class="landing-demo-grid">
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Amina B.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Mohamed K.</span>
+            </div>
+            <div class="landing-demo-cell absent-cell">
+              <span class="demo-dot"></span>
+              <span>Fatima S.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Ahmed L.</span>
+            </div>
+            <div class="landing-demo-cell late-cell">
+              <span class="demo-dot"></span>
+              <span>Yacine M.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Nadia R.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Sofiane T.</span>
+            </div>
+            <div class="landing-demo-cell absent-cell">
+              <span class="demo-dot"></span>
+              <span>Lina H.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Karim D.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Meriem A.</span>
+            </div>
+            <div class="landing-demo-cell late-cell">
+              <span class="demo-dot"></span>
+              <span>Omar B.</span>
+            </div>
+            <div class="landing-demo-cell present-cell">
+              <span class="demo-dot"></span>
+              <span>Houda C.</span>
+            </div>
+          </div>
+          <div class="landing-demo-legend">
+            <span class="legend-item"><span class="legend-dot" style="background:#10B981"></span>Présent</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#EF4444"></span>Absent</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#F59E0B"></span>Retard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher Profile Teaser -->
+      <div class="landing-profile-section">
+        <div class="landing-profile-card">
+          <div class="landing-profile-avatar">
+            <svg viewBox="0 0 96 96" width="96" height="96" fill="none">
+              <circle cx="48" cy="48" r="46" fill="url(#avatarGrad)"/>
+              <text x="48" y="52" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700">DS</text>
+              <defs><linearGradient id="avatarGrad" x1="0" y1="0" x2="96" y2="96"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div class="landing-profile-info">
+            <h3>Daas Saïda <span dir="rtl">دعاس سعيدة</span></h3>
+            <p>Professeure de Français · École Omar Hamroune</p>
+            <p class="landing-profile-location">Bouzareah, Alger · 2026–2027</p>
+          </div>
+          <button class="landing-btn landing-btn-primary" onclick="window.location.hash='#/dashboard'">
+            Voir le tableau de bord
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="landing-footer">
+        <div class="landing-footer-content">
+          <div class="landing-footer-left">
+            <span class="landing-footer-brand">École Omar Hamroune · 2026–2027</span>
+          </div>
+          <div class="landing-footer-center">
+            <span class="landing-footer-badge">PWA</span>
+            <span class="landing-footer-badge">Offline</span>
+            <span class="landing-footer-badge">Open Source</span>
+          </div>
+          <div class="landing-footer-right">
+            <span>Développé avec ❤️ pour l'éducation algérienne</span>
+          </div>
+        </div>
+      </footer>
+
       <div id="landing-loading" class="landing-loading">
         <div class="loading-logo">
           <div class="loading-spinner"></div>
@@ -144,6 +305,7 @@
                     <li class="nav-item"><a href="#/register" class="nav-link" data-page="register"><i data-lucide="book-marked"></i><span data-i18n="nav.register">Registre</span></a></li>
                     <li class="nav-item"><a href="#/statistics" class="nav-link" data-page="statistics"><i data-lucide="bar-chart-3"></i><span data-i18n="nav.statistics">Statistiques</span></a></li>
                     <li class="nav-item"><a href="#/settings" class="nav-link" data-page="settings"><i data-lucide="settings"></i><span data-i18n="nav.settings">Paramètres</span></a></li>
+                    <li class="nav-item"><a href="#/about" class="nav-link" data-page="about"><i data-lucide="info"></i><span data-i18n="nav.about">À Propos</span></a></li>
                 </ul>
             </nav>
             <div class="sidebar-footer">
@@ -159,18 +321,18 @@
         <main id="main-content" class="main-content">
             <header class="top-navbar">
                 <div class="navbar-left">
-                    <button id="sidebar-toggle" class="sidebar-toggle"><i data-lucide="menu"></i></button>
+                    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Ouvrir le menu"><i data-lucide="menu"></i></button>
                     <div class="search-bar">
                         <i data-lucide="search" class="search-icon"></i>
                         <input type="search" id="search-input" placeholder="Rechercher..." aria-label="Rechercher">
                     </div>
                 </div>
                 <div class="navbar-right">
-                    <button id="theme-toggle" class="btn-icon" title="Changer le thème"><i data-lucide="moon"></i></button>
-                    <button id="lang-toggle" class="btn-icon" title="العربية"><span class="lang-label">ع</span></button>
-                    <button id="notifications-btn" class="btn-icon position-relative" title="Notifications">
+                    <button id="theme-toggle" class="btn-icon" title="Changer le thème" aria-label="Changer le thème"><i data-lucide="moon"></i></button>
+                    <button id="lang-toggle" class="btn-icon" title="العربية" aria-label="Changer la langue"><span class="lang-label">ع</span></button>
+                    <button id="notifications-btn" class="btn-icon position-relative" title="Notifications" aria-label="Notifications">
                         <i data-lucide="bell"></i>
-                        <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
+                        <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none" aria-label="Notifications non lues">0</span>
                     </button>
                 </div>
             </header>
@@ -179,6 +341,35 @@
     </div>
     <div id="modal-container"></div>
     <div id="toast-container" class="toast-container"></div>
+
+    <!-- Offline Banner -->
+    <div id="offline-banner" class="offline-banner" role="alert" aria-live="polite" style="display:none">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="2" x2="22" y2="22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+      <span data-i18n="offline.banner">Mode hors ligne — وضع عدم الاتصال</span>
+    </div>
+
+    <!-- Sync Indicator -->
+    <div id="sync-indicator" class="sync-indicator" role="status" aria-live="polite" style="display:none">
+      <span class="sync-dot"></span>
+      <span data-i18n="sync.saving">Sauvegarde...</span>
+    </div>
+
+    <!-- Custom Install Prompt -->
+    <div id="install-prompt" class="install-prompt" role="dialog" aria-labelledby="install-title" style="display:none">
+      <div class="install-prompt-card">
+        <div class="install-prompt-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><path d="M12 19h8"/></svg>
+        </div>
+        <div class="install-prompt-content">
+          <h3 id="install-title" style="margin:0 0 4px;font-size:var(--text-base);font-weight:600;color:var(--text)">Installer l'application</h3>
+          <p style="margin:0;font-size:var(--text-xs);color:var(--text-secondary)">Accès rapide depuis votre écran d'accueil</p>
+        </div>
+        <div class="install-prompt-actions">
+          <button id="install-accept" class="btn btn-primary btn-sm">Installer</button>
+          <button id="install-dismiss" class="btn btn-sm" style="background:transparent;color:var(--text-tertiary);box-shadow:none">Plus tard</button>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
@@ -201,6 +392,7 @@
     <script src="assets/js/pages/register.js"></script>
     <script src="assets/js/pages/statistics.js"></script>
     <script src="assets/js/pages/settings.js"></script>
+    <script src="assets/js/pages/about.js"></script>
     <script src="assets/js/pages/profile.js"></script>
     <script src="assets/js/landing.js"></script>
     <script src="assets/js/app.js"></script>

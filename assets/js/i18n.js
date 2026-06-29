@@ -13,7 +13,8 @@ window.App.I18n = (function () {
         register: 'Registre',
         statistics: 'Statistiques',
         settings: 'Paramètres',
-        profile: 'Profil'
+        profile: 'Profil',
+        about: 'À Propos'
       },
       dashboard: {
         title: 'Tableau de bord',
@@ -169,6 +170,12 @@ window.App.I18n = (function () {
         thursday: 'Jeudi',
         friday: 'Vendredi',
         saturday: 'Samedi'
+      },
+      offline: {
+        banner: 'Mode hors ligne — toutes les données sont sauvegardées localement'
+      },
+      sync: {
+        saving: 'Sauvegarde...'
       }
     },
     ar: {
@@ -180,7 +187,8 @@ window.App.I18n = (function () {
         register: 'السجل',
         statistics: 'الإحصائيات',
         settings: 'الإعدادات',
-        profile: 'الملف الشخصي'
+        profile: 'الملف الشخصي',
+        about: 'حول التطبيق'
       },
       dashboard: {
         title: 'لوحة التحكم',
@@ -336,6 +344,12 @@ window.App.I18n = (function () {
         thursday: 'الخميس',
         friday: 'الجمعة',
         saturday: 'السبت'
+      },
+      offline: {
+        banner: 'وضع عدم الاتصال — جميع البيانات محفوظة محلياً'
+      },
+      sync: {
+        saving: 'جاري الحفظ...'
       }
     }
   };
