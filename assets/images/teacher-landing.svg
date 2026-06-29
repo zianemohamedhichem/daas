@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 480">
+  <defs>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="1" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Floor shadow -->
+  <ellipse cx="160" cy="465" rx="70" ry="8" fill="#000" opacity="0.08"/>
+
+  <!-- Shoes -->
+  <path d="M135 452 Q135 460 145 462 L160 462 Q160 460 160 452Z" fill="#1E293B"/>
+  <path d="M160 452 Q160 460 170 462 L185 462 Q185 460 185 452Z" fill="#1E293B"/>
+  <path d="M135 455 Q135 462 145 464 L160 464 Q160 462 160 455Z" fill="#0F172A"/>
+  <path d="M160 455 Q160 462 170 464 L185 464 Q185 462 185 455Z" fill="#0F172A"/>
+
+  <!-- Pants -->
+  <path d="M130 310 L128 452 Q128 458 140 458 L160 458 L160 310Z" fill="#1E293B"/>
+  <path d="M160 310 L160 458 L180 458 Q192 458 192 452 L190 310Z" fill="#1E293B"/>
+  <!-- Pants seam detail -->
+  <line x1="160" y1="310" x2="160" y2="458" stroke="#162032" stroke-width="1"/>
+
+  <!-- White blouse torso -->
+  <path d="M135 245 L130 310 L190 310 L185 245Z" fill="#FFFFFF"/>
+  <!-- Collar left -->
+  <path d="M143 245 L135 230 L155 240Z" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.5"/>
+  <!-- Collar right -->
+  <path d="M177 245 L185 230 L165 240Z" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="0.5"/>
+  <!-- Collar V -->
+  <path d="M155 240 L160 255 L165 240Z" fill="#F4C9A0"/>
+
+  <!-- Blazer -->
+  <path d="M120 225 Q118 228 118 235 L118 310 L130 310 L135 245 L135 228Z" fill="#0F766E"/>
+  <path d="M200 225 Q202 228 202 235 L202 310 L190 310 L185 245 L185 228Z" fill="#0F766E"/>
+  <!-- Blazer front panels -->
+  <path d="M135 228 L135 245 L130 310 L130 245Z" fill="#0D6D64"/>
+  <path d="M185 228 L185 245 L190 310 L190 245Z" fill="#0D6D64"/>
+  <!-- Blazer lapels -->
+  <path d="M135 228 L140 218 L155 240 L155 245Z" fill="#134E4A"/>
+  <path d="M185 228 L180 218 L165 240 L165 245Z" fill="#134E4A"/>
+  <!-- Blazer buttons -->
+  <circle cx="160" cy="260" r="2.5" fill="#134E4A"/>
+  <circle cx="160" cy="280" r="2.5" fill="#134E4A"/>
+  <!-- Blazer pocket -->
+  <rect x="132" y="290" width="20" height="2" rx="1" fill="#134E4A"/>
+
+  <!-- Left arm (holding book) -->
+  <path d="M118 230 Q100 240 95 270 L92 310 Q92 320 100 320 L108 320 Q115 320 115 310 L115 290" fill="#0F766E"/>
+  <!-- Left hand -->
+  <ellipse cx="108" cy="322" rx="8" ry="10" fill="#F4C9A0"/>
+  <!-- Book in left hand -->
+  <g transform="translate(78, 305) rotate(-5)">
+    <rect x="0" y="0" width="40" height="28" rx="3" fill="#134E4A"/>
+    <rect x="2" y="2" width="36" height="24" rx="2" fill="#0D6D64"/>
+    <line x1="20" y1="2" x2="20" y2="26" stroke="#134E4A" stroke-width="1.5"/>
+    <rect x="6" y="8" width="10" height="1.5" rx="0.5" fill="#FFFFFF" opacity="0.6"/>
+    <rect x="6" y="12" width="8" height="1.5" rx="0.5" fill="#FFFFFF" opacity="0.4"/>
+    <rect x="24" y="8" width="10" height="1.5" rx="0.5" fill="#FFFFFF" opacity="0.6"/>
+    <rect x="24" y="12" width="7" height="1.5" rx="0.5" fill="#FFFFFF" opacity="0.4"/>
+  </g>
+
+  <!-- Right arm (gesturing) -->
+  <path d="M202 230 Q220 240 225 260 L230 285 Q232 295 225 298 L218 298 Q210 298 210 288 L215 260" fill="#0F766E"/>
+  <!-- Right hand (open gesture) -->
+  <path d="M220 290 Q225 282 232 285 Q238 288 235 295 Q233 302 225 302 Q218 302 216 295Z" fill="#F4C9A0"/>
+  <!-- Fingers suggestion -->
+  <path d="M228 286 Q231 280 233 283" stroke="#E8B08A" stroke-width="0.8" fill="none"/>
+  <path d="M225 288 Q227 283 229 285" stroke="#E8B08A" stroke-width="0.8" fill="none"/>
+
+  <!-- Neck -->
+  <rect x="152" y="220" width="16" height="16" rx="4" fill="#F4C9A0"/>
+
+  <!-- Head -->
+  <ellipse cx="160" cy="195" rx="38" ry="42" fill="#F4C9A0"/>
+
+  <!-- Hair back -->
+  <path d="M122 185 Q120 150 140 140 Q155 132 175 135 Q195 140 200 165 Q202 185 200 200 Q198 195 195 188 Q192 175 185 168 Q175 160 160 158 Q145 160 135 168 Q128 178 125 192Z" fill="#6B3A2A"/>
+  <!-- Hair bun -->
+  <ellipse cx="160" cy="152" rx="22" ry="18" fill="#6B3A2A"/>
+  <ellipse cx="160" cy="150" rx="18" ry="14" fill="#7A4430"/>
+  <!-- Hair tie -->
+  <ellipse cx="160" cy="165" rx="8" ry="3" fill="#5D3320"/>
+
+  <!-- Hair front/bangs -->
+  <path d="M125 190 Q123 170 132 158 Q142 148 155 146 Q148 155 142 165 Q136 178 130 192Z" fill="#5D3320"/>
+  <path d="M195 190 Q197 170 188 158 Q178 148 165 146 Q172 155 178 165 Q184 178 190 192Z" fill="#5D3320"/>
+
+  <!-- Eyebrows -->
+  <path d="M140 180 Q145 177 152 178" stroke="#5D3320" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M168 178 Q175 177 180 180" stroke="#5D3320" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Eyes -->
+  <ellipse cx="145" cy="188" rx="6" ry="5" fill="#FFFFFF"/>
+  <ellipse cx="175" cy="188" rx="6" ry="5" fill="#FFFFFF"/>
+  <circle cx="146" cy="188" r="3.5" fill="#3E2723"/>
+  <circle cx="176" cy="188" r="3.5" fill="#3E2723"/>
+  <circle cx="147.5" cy="187" r="1.2" fill="#FFFFFF"/>
+  <circle cx="177.5" cy="187" r="1.2" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <path d="M158 193 Q160 197 162 193" stroke="#D4A574" stroke-width="1" fill="none" stroke-linecap="round"/>
+
+  <!-- Smile -->
+  <path d="M148 202 Q160 212 172 202" stroke="#C4845A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Cheeks -->
+  <ellipse cx="135" cy="200" rx="6" ry="3.5" fill="#F0A07A" opacity="0.35"/>
+  <ellipse cx="185" cy="200" rx="6" ry="3.5" fill="#F0A07A" opacity="0.35"/>
+
+  <!-- Blazer shoulders on top -->
+  <path d="M135 228 Q140 218 155 240 L135 245Z" fill="#0F766E" opacity="0.6"/>
+  <path d="M185 228 Q180 218 165 240 L185 245Z" fill="#0F766E" opacity="0.6"/>
+</svg>

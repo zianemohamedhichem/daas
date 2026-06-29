@@ -36,8 +36,93 @@
     <link rel="stylesheet" href="assets/css/dark.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/print.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
 </head>
 <body>
+    <!-- Landing Page Overlay -->
+    <div id="landing-page" class="landing-page" style="display:none">
+      <div class="landing-bg">
+        <div class="landing-rays"></div>
+        <div class="landing-particles" id="landing-particles"></div>
+        <div class="floating-element floating-el-1">📚</div>
+        <div class="floating-element floating-el-2">📖</div>
+        <div class="floating-element floating-el-3">ABC</div>
+        <div class="floating-element floating-el-4">🌿</div>
+        <div class="floating-element floating-el-5">📝</div>
+        <div class="floating-element floating-el-6">📚</div>
+        <div class="floating-element floating-el-7">📖</div>
+      </div>
+      <div class="landing-content">
+        <div class="landing-left">
+          <div class="landing-badge-group">
+            <span class="landing-badge">📱 Offline Ready</span>
+            <span class="landing-badge">⚡ PWA</span>
+            <span class="landing-badge">🔒 Secure</span>
+            <span class="landing-badge">🚀 Fast</span>
+            <span class="landing-badge">🐙 GitHub Pages</span>
+          </div>
+          <h1 class="landing-title">Registre d'Appel<br>Numérique</h1>
+          <p class="landing-subtitle-ar" dir="rtl">السجل الرقمي للحضور والغياب</p>
+          <p class="landing-description">A modern digital attendance platform designed for Algerian primary schools.</p>
+          <div class="landing-welcome-card">
+            <div class="welcome-avatar">DS</div>
+            <div class="welcome-info">
+              <div class="welcome-name">Daas Saïda <span class="welcome-name-ar">دعاس سعيدة</span></div>
+              <div class="welcome-role">Enseignante &bull; École Primaire</div>
+              <div class="welcome-year">Année scolaire 2026-2027</div>
+            </div>
+          </div>
+          <div class="landing-actions">
+            <button id="landing-commencer" class="landing-btn landing-btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+              <span>Commencer</span>
+            </button>
+            <button id="landing-decouvrir" class="landing-btn landing-btn-secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>Découvrir</span>
+            </button>
+          </div>
+        </div>
+        <div class="landing-right">
+          <div class="smart-board">
+            <div class="board-screen">
+              <h2>Bonjour !</h2>
+              <p>Bienvenue</p>
+              <p class="board-subtitle">Registre d'Appel Numérique</p>
+              <p class="board-desc">Gestion intelligente de la présence scolaire</p>
+              <div class="board-preview">
+                <div class="board-stat">
+                  <span class="board-stat-number">20</span>
+                  <span class="board-stat-label">Élèves</span>
+                </div>
+                <div class="board-stat">
+                  <span class="board-stat-number">2</span>
+                  <span class="board-stat-label">Classes</span>
+                </div>
+                <div class="board-stat">
+                  <span class="board-stat-number">94%</span>
+                  <span class="board-stat-label">Présence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="landing-teacher">
+            <img src="assets/images/teacher-landing.svg" alt="Enseignante">
+          </div>
+        </div>
+      </div>
+      <div id="landing-loading" class="landing-loading">
+        <div class="loading-logo">
+          <div class="loading-spinner"></div>
+          <div class="loading-emblem">🏫</div>
+        </div>
+        <div class="loading-bar">
+          <div id="loading-progress" class="loading-progress"></div>
+        </div>
+        <p class="loading-text">Préparation de votre registre...</p>
+      </div>
+    </div>
+
     <div id="app" class="app">
         <aside id="sidebar" class="sidebar">
             <div class="sidebar-header">
@@ -117,6 +202,7 @@
     <script src="assets/js/pages/statistics.js"></script>
     <script src="assets/js/pages/settings.js"></script>
     <script src="assets/js/pages/profile.js"></script>
+    <script src="assets/js/landing.js"></script>
     <script src="assets/js/app.js"></script>
     <script>lucide.createIcons();</script>
 </body>

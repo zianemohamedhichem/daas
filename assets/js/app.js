@@ -296,6 +296,10 @@ window.App.Loading = null;
   }
 
   function init() {
+    if (window.App.Landing) {
+      window.App.Landing.init();
+    }
+
     DB.init().then(function () {
       return I18n.init();
     }).then(function () {
