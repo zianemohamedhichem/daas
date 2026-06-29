@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10B981">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Registre d'Appel Numérique — gestion des présences pour les écoles primaires algériennes">
+    <meta name="robots" content="noindex, nofollow">
+
+    <meta property="og:title" content="Registre d'Appel Numérique">
+    <meta property="og:description" content="Gestion des présences pour les écoles primaires algériennes">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_DZ">
+    <meta property="og:locale:alternate" content="ar_DZ">
+
+    <title>Registre d'Appel Numérique</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/print.css">
+</head>
+<body>
+    <div id="app" class="app">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <div class="brand-icon"><i data-lucide="calendar-check"></i></div>
+                    <div class="brand-text">
+                        <h2>Registre d'Appel</h2>
+                        <span>Numérique</span>
+                    </div>
+                </div>
+                <button id="sidebar-close" class="sidebar-close-btn d-lg-none"><i data-lucide="x"></i></button>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item"><a href="#/dashboard" class="nav-link active" data-page="dashboard"><i data-lucide="layout-dashboard"></i><span data-i18n="nav.dashboard">Tableau de bord</span></a></li>
+                    <li class="nav-item"><a href="#/classes" class="nav-link" data-page="classes"><i data-lucide="book-open"></i><span data-i18n="nav.classes">Classes</span></a></li>
+                    <li class="nav-item"><a href="#/students" class="nav-link" data-page="students"><i data-lucide="users"></i><span data-i18n="nav.students">Élèves</span></a></li>
+                    <li class="nav-item"><a href="#/attendance" class="nav-link" data-page="attendance"><i data-lucide="clipboard-check"></i><span data-i18n="nav.attendance">Présences</span></a></li>
+                    <li class="nav-item"><a href="#/register" class="nav-link" data-page="register"><i data-lucide="book-marked"></i><span data-i18n="nav.register">Registre</span></a></li>
+                    <li class="nav-item"><a href="#/statistics" class="nav-link" data-page="statistics"><i data-lucide="bar-chart-3"></i><span data-i18n="nav.statistics">Statistiques</span></a></li>
+                    <li class="nav-item"><a href="#/settings" class="nav-link" data-page="settings"><i data-lucide="settings"></i><span data-i18n="nav.settings">Paramètres</span></a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#/profile" class="sidebar-user">
+                    <div class="sidebar-user-avatar">DS</div>
+                    <div class="sidebar-user-info">
+                        <div class="sidebar-user-name">Daas Saïda</div>
+                        <div class="sidebar-user-role">Enseignante</div>
+                    </div>
+                </a>
+            </div>
+        </aside>
+        <main id="main-content" class="main-content">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button id="sidebar-toggle" class="sidebar-toggle"><i data-lucide="menu"></i></button>
+                    <div class="search-bar">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="search" id="search-input" placeholder="Rechercher..." aria-label="Rechercher">
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <button id="theme-toggle" class="btn-icon" title="Changer le thème"><i data-lucide="moon"></i></button>
+                    <button id="lang-toggle" class="btn-icon" title="العربية"><span class="lang-label">ع</span></button>
+                    <button id="notifications-btn" class="btn-icon position-relative" title="Notifications">
+                        <i data-lucide="bell"></i>
+                        <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
+                    </button>
+                </div>
+            </header>
+            <div id="page-content" class="page-content"></div>
+        </main>
+    </div>
+    <div id="modal-container"></div>
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <script src="assets/js/db.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/utils/helpers.js"></script>
+    <script src="assets/js/utils/dates.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/services/attendance-service.js"></script>
+    <script src="assets/js/services/export-service.js"></script>
+    <script src="assets/js/services/notification-service.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+    <script src="assets/js/pages/classes.js"></script>
+    <script src="assets/js/pages/students.js"></script>
+    <script src="assets/js/pages/attendance.js"></script>
+    <script src="assets/js/pages/register.js"></script>
+    <script src="assets/js/pages/statistics.js"></script>
+    <script src="assets/js/pages/settings.js"></script>
+    <script src="assets/js/pages/profile.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

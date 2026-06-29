@@ -1,0 +1,659 @@
+/* ===========================
+   RESPONSIVE: MAX 1200px
+   =========================== */
+
+@media (max-width: 1200px) {
+  .dashboard-stats,
+  .stats-grid,
+  .stats-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+
+  .settings-nav-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .register-info {
+    grid-template-columns: 1fr;
+  }
+
+  .student-card-stats {
+    display: none;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   RESPONSIVE: MAX 992px
+   =========================== */
+
+@media (max-width: 992px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: calc(var(--z-sticky) + 1);
+  }
+
+  [dir="rtl"] .sidebar {
+    transform: translateX(100%);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  [dir="rtl"] .main-content {
+    margin-right: 0 !important;
+  }
+
+  .sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+  }
+
+  [dir="rtl"] .sidebar-collapsed .sidebar {
+    transform: translateX(100%);
+  }
+
+  .sidebar-collapsed .main-content {
+    margin-left: 0 !important;
+  }
+
+  [dir="rtl"] .sidebar-collapsed .main-content {
+    margin-right: 0 !important;
+  }
+
+  .sidebar-collapsed .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .navbar-toggle,
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .sidebar-overlay {
+    z-index: var(--z-sticky);
+  }
+
+  .top-navbar {
+    padding: 0 var(--space-4);
+  }
+
+  .page-content {
+    padding: var(--space-4);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-6);
+  }
+
+  .profile-meta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profile-actions {
+    justify-content: center;
+  }
+
+  .profile-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-6);
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .class-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .register-paper {
+    padding: var(--space-4);
+  }
+
+  .register-table th,
+  .register-table td {
+    padding: 4px 6px !important;
+    font-size: 9pt !important;
+  }
+
+  .register-table td.name-cell {
+    min-width: 100px !important;
+  }
+
+  .register-table td.status-cell {
+    font-size: 12pt !important;
+  }
+
+  .attendance-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ===========================
+   RESPONSIVE: MAX 768px
+   =========================== */
+
+@media (max-width: 768px) {
+  .dashboard-stats,
+  .stats-grid,
+  .stats-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .stat-card {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .stat-card .stat-icon {
+    width: 44px;
+    height: 44px;
+    font-size: var(--text-lg);
+  }
+
+  .stat-card .stat-number {
+    font-size: var(--text-xl);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-actions {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+  }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-bar .form-control,
+  .filter-bar .form-select {
+    max-width: 100%;
+  }
+
+  .filter-bar .btn {
+    width: 100%;
+  }
+
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-content {
+    margin: var(--space-4);
+    max-height: calc(100vh - 32px);
+  }
+
+  .modal-lg,
+  .modal-xl {
+    max-width: 100%;
+  }
+
+  .toast {
+    min-width: 280px;
+    max-width: calc(100vw - 32px);
+  }
+
+  .toast-container {
+    left: var(--space-4);
+    right: var(--space-4);
+  }
+
+  .register-info {
+    grid-template-columns: 1fr;
+  }
+
+  .register-table td.date-cell {
+    display: none;
+  }
+
+  .btn-group {
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    border-radius: 0 !important;
+  }
+
+  .btn-group .btn:first-child {
+    border-radius: 14px 14px 0 0 !important;
+  }
+
+  .btn-group .btn:last-child {
+    border-radius: 0 0 14px 14px !important;
+  }
+
+  [dir="rtl"] .btn-group .btn:first-child {
+    border-radius: 14px 14px 0 0 !important;
+  }
+
+  [dir="rtl"] .btn-group .btn:last-child {
+    border-radius: 0 0 14px 14px !important;
+  }
+
+  .attendance-toolbar {
+    gap: var(--space-3);
+  }
+}
+
+/* ===========================
+   RESPONSIVE: MAX 576px
+   =========================== */
+
+@media (max-width: 576px) {
+  :root {
+    --page-padding: 16px;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  .dashboard-stats,
+  .stats-grid,
+  .stats-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-card::before {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px 4px 0 0;
+    bottom: auto;
+    top: 0;
+  }
+
+  .page-title {
+    font-size: var(--text-xl);
+  }
+
+  .class-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-card {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-4);
+  }
+
+  .student-card-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .attendance-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .attendance-card .status-buttons {
+    flex-wrap: wrap;
+  }
+
+  .attendance-card .status-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .register-paper {
+    padding: var(--space-3);
+    border-width: 1px;
+    border-radius: 12px;
+  }
+
+  .register-header {
+    padding-bottom: var(--space-3);
+  }
+
+  .register-republic {
+    font-size: 10pt !important;
+  }
+
+  .register-title {
+    font-size: 14pt !important;
+    letter-spacing: 1px !important;
+    padding: 8px 12px !important;
+  }
+
+  .register-table {
+    font-size: 8pt !important;
+  }
+
+  .register-table th,
+  .register-table td {
+    padding: 3px 4px !important;
+    font-size: 8pt !important;
+  }
+
+  .register-table td.name-cell {
+    min-width: 80px !important;
+  }
+
+  .register-table td.status-cell {
+    font-size: 10pt !important;
+  }
+
+  .register-footer {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .register-info-item {
+    font-size: 9pt !important;
+  }
+
+  .chart-container,
+  .chart-card {
+    padding: var(--space-4);
+  }
+
+  .chart-body {
+    min-height: 180px;
+  }
+
+  .empty-state {
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .empty-state-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .btn-lg {
+    padding: 12px 20px;
+  }
+
+  .modal-content {
+    margin: var(--space-2);
+    border-radius: 20px;
+  }
+
+  .modal-header {
+    padding: var(--space-4);
+  }
+
+  .modal-body {
+    padding: var(--space-4);
+  }
+
+  .modal-footer {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .dropdown-menu {
+    min-width: 180px;
+  }
+
+  .calendar-cell {
+    min-height: 50px;
+    padding: 2px;
+  }
+
+  .calendar-date {
+    font-size: var(--text-xs);
+  }
+
+  .calendar-event {
+    display: none;
+  }
+
+  .profile-avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  .profile-name {
+    font-size: var(--text-xl);
+  }
+
+  .settings-nav {
+    flex-wrap: nowrap;
+    padding-bottom: var(--space-3);
+  }
+
+  .settings-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .hero-section {
+    padding: var(--space-6);
+  }
+
+  .hero-illustration {
+    width: 120px;
+    height: 120px;
+    font-size: 50px;
+  }
+
+  .profile-hero {
+    padding: var(--space-6);
+  }
+
+  .student-attendance-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===========================
+   RESPONSIVE: MAX 400px
+   =========================== */
+
+@media (max-width: 400px) {
+  .dashboard-stats,
+  .stats-grid,
+  .stats-summary-grid {
+    gap: var(--space-2);
+  }
+
+  .stat-card {
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .stat-card .stat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-base);
+  }
+
+  .stat-card .stat-number {
+    font-size: var(--text-lg);
+  }
+
+  .stat-card .stat-label {
+    font-size: var(--text-xs);
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: var(--text-xs);
+  }
+
+  .btn-lg {
+    padding: 10px 18px;
+    font-size: var(--text-sm);
+  }
+
+  .card {
+    padding: var(--space-4);
+    border-radius: 16px;
+  }
+
+  .top-navbar {
+    padding: 0 var(--space-3);
+  }
+
+  .page-content {
+    padding: var(--space-3);
+  }
+}
+
+/* ===========================
+   LANDSCAPE MOBILE
+   =========================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .modal-content {
+    max-height: calc(100vh - 20px);
+  }
+
+  .modal-overlay {
+    padding: var(--space-2);
+  }
+}
+
+/* ===========================
+   HIGH DPI SCREENS
+   =========================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .register-table th,
+  .register-table td {
+    border-width: 0.5px;
+  }
+}
+
+/* ===========================
+   REDUCED MOTION
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .modal-content {
+    transition: none;
+  }
+
+  .toast {
+    animation: none;
+  }
+
+  .card:hover,
+  .stat-card:hover,
+  .class-card:hover,
+  .student-card:hover,
+  .attendance-card:hover {
+    transform: none;
+  }
+}
+
+/* ===========================
+   PRINT OVERRIDES
+   =========================== */
+
+@media print {
+  .sidebar,
+  .top-navbar,
+  .no-print,
+  .page-actions,
+  .filter-bar,
+  .pagination,
+  .toast-container,
+  .btn:not(.print-visible),
+  .search-bar {
+    display: none !important;
+  }
+
+  .main-content {
+    margin: 0 !important;
+  }
+
+  .page-content {
+    padding: 0 !important;
+  }
+}

@@ -1,0 +1,260 @@
+:root {
+  --primary: #10B981;
+  --primary-light: #6EE7B7;
+  --primary-dark: #059669;
+  --primary-surface: #ECFDF5;
+  --primary-on: #ffffff;
+
+  --secondary: #2563EB;
+  --secondary-light: #60A5FA;
+  --secondary-surface: #EFF6FF;
+  --secondary-on: #ffffff;
+
+  --accent: #F59E0B;
+  --accent-light: #FCD34D;
+  --accent-surface: #FFFBEB;
+  --accent-on: #ffffff;
+
+  --success: #10B981;
+  --success-light: #34D399;
+  --success-surface: #ECFDF5;
+  --success-on: #ffffff;
+
+  --danger: #EF4444;
+  --danger-light: #F87171;
+  --danger-surface: #FEF2F2;
+  --danger-on: #ffffff;
+
+  --warning: #F59E0B;
+  --warning-light: #FBBF24;
+  --warning-surface: #FFFBEB;
+  --warning-on: #ffffff;
+
+  --info: #2563EB;
+  --info-light: #60A5FA;
+  --info-surface: #EFF6FF;
+  --info-on: #ffffff;
+
+  --background: #FAFAF5;
+  --surface: #FFFFFF;
+  --surface-variant: #F8F6F0;
+  --surface-hover: #F5F0E8;
+  --surface-elevated: #FFFFFF;
+  --surface-overlay: rgba(0, 0, 0, 0.04);
+
+  --text: #1E293B;
+  --text-secondary: #64748B;
+  --text-tertiary: #94A3B8;
+  --text-on-primary: #ffffff;
+  --text-on-secondary: #ffffff;
+
+  --border: #E8E4DC;
+  --border-light: #F1EDE5;
+  --border-focus: var(--primary);
+  --divider: rgba(0, 0, 0, 0.06);
+
+  --soft-gray: #F1F5F9;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.08), 0 10px 10px rgba(0, 0, 0, 0.03);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+  --shadow-glow-accent: 0 0 20px rgba(245, 158, 11, 0.15);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  --font-heading: 'Poppins', 'Noto Sans Arabic', sans-serif;
+  --font-body: 'Inter', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter', 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-arabic: 'Noto Sans Arabic', 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-toast: 600;
+  --z-tooltip: 700;
+  --z-spinner: 800;
+
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 72px;
+  --top-navbar-height: 72px;
+  --page-padding: 32px;
+
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-blur: blur(24px);
+}
+
+[data-theme='dark'] {
+  --primary: #34D399;
+  --primary-light: #6EE7B7;
+  --primary-dark: #10B981;
+  --primary-surface: rgba(52, 211, 153, 0.12);
+  --primary-on: #0C1222;
+
+  --secondary: #60A5FA;
+  --secondary-light: #93C5FD;
+  --secondary-surface: rgba(96, 165, 250, 0.12);
+  --secondary-on: #0C1222;
+
+  --accent: #FBBF24;
+  --accent-light: #FCD34D;
+  --accent-surface: rgba(251, 191, 36, 0.12);
+  --accent-on: #0C1222;
+
+  --success: #34D399;
+  --success-light: #6EE7B7;
+  --success-surface: rgba(52, 211, 153, 0.12);
+  --success-on: #0C1222;
+
+  --danger: #F87171;
+  --danger-light: #FCA5A5;
+  --danger-surface: rgba(248, 113, 113, 0.12);
+  --danger-on: #ffffff;
+
+  --warning: #FBBF24;
+  --warning-light: #FCD34D;
+  --warning-surface: rgba(251, 191, 36, 0.12);
+  --warning-on: #0C1222;
+
+  --info: #60A5FA;
+  --info-light: #93C5FD;
+  --info-surface: rgba(96, 165, 250, 0.12);
+  --info-on: #0C1222;
+
+  --background: #0C1222;
+  --surface: #162032;
+  --surface-variant: #1E2D45;
+  --surface-hover: #243352;
+  --surface-elevated: #1E2D45;
+  --surface-overlay: rgba(255, 255, 255, 0.04);
+
+  --text: #F0F4F8;
+  --text-secondary: #8899AA;
+  --text-tertiary: #5A6B7D;
+  --text-on-primary: #0C1222;
+  --text-on-secondary: #0C1222;
+
+  --border: #243352;
+  --border-light: #1E2D45;
+  --border-focus: var(--primary);
+  --divider: rgba(255, 255, 255, 0.06);
+
+  --soft-gray: #1E2D45;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.18);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(52, 211, 153, 0.2);
+  --shadow-glow-accent: 0 0 20px rgba(251, 191, 36, 0.2);
+
+  --glass-bg: rgba(22, 32, 50, 0.7);
+  --glass-border: rgba(36, 51, 82, 0.5);
+  --glass-blur: blur(24px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

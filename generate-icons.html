@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur d'Icônes — Registre d'Appel</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; padding: 40px 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { text-align: center; color: #1565C0; margin-bottom: 8px; }
+    .subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+    .preview { display: flex; gap: 20px; justify-content: center; align-items: flex-end; flex-wrap: wrap; margin-bottom: 30px; }
+    .preview-item { text-align: center; }
+    .preview-item canvas { border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .preview-item p { margin-top: 8px; font-size: 14px; color: #666; }
+    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: 12px 24px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: #1565C0; color: white; }
+    .btn-primary:hover { background: #0D47A1; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(21,101,192,0.3); }
+    .btn-success { background: #2E7D32; color: white; }
+    .btn-success:hover { background: #1B5E20; }
+    .info { background: #E3F2FD; padding: 16px 20px; border-radius: 8px; margin-top: 30px; font-size: 14px; color: #1565C0; line-height: 1.6; }
+    .info strong { display: block; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Générateur d'Icônes PWA</h1>
+    <p class="subtitle">Registre d'Appel Numérique — Cliquez pour télécharger les icônes PNG</p>
+
+    <div class="preview">
+      <div class="preview-item">
+        <canvas id="canvas-192" width="192" height="192"></canvas>
+        <p>192 × 192</p>
+      </div>
+      <div class="preview-item">
+        <canvas id="canvas-512" width="512" height="512"></canvas>
+        <p>512 × 512</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="downloadIcon(192)">Télécharger 192px</button>
+      <button class="btn btn-primary" onclick="downloadIcon(512)">Télécharger 512px</button>
+      <button class="btn btn-success" onclick="downloadBoth()">Télécharger les deux</button>
+    </div>
+
+    <div class="info">
+      <strong>Instructions :</strong>
+      1. Ouvrez cette page dans un navigateur web.<br>
+      2. Les icônes sont générées automatiquement via Canvas.<br>
+      3. Cliquez sur les boutons pour télécharger les fichiers PNG.<br>
+      4. Placez les fichiers dans <code>assets/icons/</code> du projet.
+    </div>
+  </div>
+
+  <script>
+    function drawIcon(canvas, size) {
+      var ctx = canvas.getContext('2d');
+      var s = size / 192;
+
+      // Background
+      ctx.beginPath();
+      ctx.roundRect(0, 0, size, size, 32 * s);
+      var grad = ctx.createLinearGradient(0, 0, size, size);
+      grad.addColorStop(0, '#1565C0');
+      grad.addColorStop(1, '#0D47A1');
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Subtle circles
+      ctx.fillStyle = 'rgba(255,255,255,0.05)';
+      ctx.beginPath();
+      ctx.arc(160 * s, 32 * s, 40 * s, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(32 * s, 160 * s, 50 * s, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Clipboard body
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.beginPath();
+      ctx.roundRect(58 * s, 36 * s, 76 * s, 110 * s, 6 * s);
+      ctx.fill();
+
+      // Clipboard clip
+      ctx.fillStyle = '#E3F2FD';
+      ctx.strokeStyle = '#1565C0';
+      ctx.lineWidth = 2 * s;
+      ctx.beginPath();
+      ctx.roundRect(72 * s, 28 * s, 48 * s, 20 * s, 4 * s);
+      ctx.fill();
+      ctx.stroke();
+
+      // Clip knob
+      ctx.fillStyle = '#1565C0';
+      ctx.beginPath();
+      ctx.arc(96 * s, 38 * s, 4 * s, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Row 1 - check
+      drawCheckRow(ctx, s, 56, '#E8F5E9', '#2E7D32', true);
+
+      // Row 2 - X
+      drawXRow(ctx, s, 72, '#FFEBEE', '#C62828');
+
+      // Row 3 - check
+      drawCheckRow(ctx, s, 88, '#E8F5E9', '#2E7D32', true);
+
+      // Row 4 - check
+      drawCheckRow(ctx, s, 104, '#E8F5E9', '#2E7D32', true);
+
+      // Row 5 - R (late)
+      drawLateRow(ctx, s, 120, '#FFF8E1', '#F57F17');
+
+      // Bottom bar
+      var barGrad = ctx.createLinearGradient(58 * s, 0, 134 * s, 0);
+      barGrad.addColorStop(0, '#42A5F5');
+      barGrad.addColorStop(1, '#1E88E5');
+      ctx.fillStyle = barGrad;
+      ctx.beginPath();
+      ctx.roundRect(58 * s, 146 * s, 76 * s, 4 * s, 2 * s);
+      ctx.fill();
+
+      // Percentage badge
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.beginPath();
+      ctx.arc(148 * s, 140 * s, 22 * s, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#2E7D32';
+      ctx.beginPath();
+      ctx.arc(148 * s, 140 * s, 19 * s, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = 'white';
+      ctx.font = 'bold ' + (13 * s) + 'px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('92%', 148 * s, 141 * s);
+    }
+
+    function drawCheckRow(ctx, s, y, bgColor, fgColor) {
+      // Checkbox
+      ctx.fillStyle = bgColor;
+      ctx.strokeStyle = fgColor;
+      ctx.lineWidth = 1 * s;
+      ctx.beginPath();
+      ctx.roundRect(68 * s, y * s, 10 * s, 10 * s, 2 * s);
+      ctx.fill();
+      ctx.stroke();
+      // Checkmark
+      ctx.strokeStyle = fgColor;
+      ctx.lineWidth = 1.8 * s;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      ctx.moveTo(69 * s, (y + 5) * s);
+      ctx.lineTo(72 * s, (y + 8) * s);
+      ctx.lineTo(77 * s, (y + 1) * s);
+      ctx.stroke();
+      // Text line
+      ctx.fillStyle = '#E0E0E0';
+      ctx.beginPath();
+      ctx.roundRect(82 * s, (y + 2) * s, 44 * s, 5 * s, 2 * s);
+      ctx.fill();
+    }
+
+    function drawXRow(ctx, s, y, bgColor, fgColor) {
+      ctx.fillStyle = bgColor;
+      ctx.strokeStyle = fgColor;
+      ctx.lineWidth = 1 * s;
+      ctx.beginPath();
+      ctx.roundRect(68 * s, y * s, 10 * s, 10 * s, 2 * s);
+      ctx.fill();
+      ctx.stroke();
+      ctx.strokeStyle = fgColor;
+      ctx.lineWidth = 1.8 * s;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(70 * s, (y + 2) * s);
+      ctx.lineTo(76 * s, (y + 8) * s);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(76 * s, (y + 2) * s);
+      ctx.lineTo(70 * s, (y + 8) * s);
+      ctx.stroke();
+      ctx.fillStyle = '#E0E0E0';
+      ctx.beginPath();
+      ctx.roundRect(82 * s, (y + 2) * s, 44 * s, 5 * s, 2 * s);
+      ctx.fill();
+    }
+
+    function drawLateRow(ctx, s, y, bgColor, fgColor) {
+      ctx.fillStyle = bgColor;
+      ctx.strokeStyle = fgColor;
+      ctx.lineWidth = 1 * s;
+      ctx.beginPath();
+      ctx.roundRect(68 * s, y * s, 10 * s, 10 * s, 2 * s);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = fgColor;
+      ctx.font = 'bold ' + (8 * s) + 'px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('R', 73 * s, (y + 5.5) * s);
+      ctx.fillStyle = '#E0E0E0';
+      ctx.beginPath();
+      ctx.roundRect(82 * s, (y + 2) * s, 44 * s, 5 * s, 2 * s);
+      ctx.fill();
+    }
+
+    function downloadIcon(size) {
+      var canvas = document.getElementById('canvas-' + size);
+      var link = document.createElement('a');
+      link.download = 'icon-' + size + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function downloadBoth() {
+      downloadIcon(192);
+      setTimeout(function () { downloadIcon(512); }, 300);
+    }
+
+    // Generate on load
+    window.addEventListener('DOMContentLoaded', function () {
+      drawIcon(document.getElementById('canvas-192'), 192);
+      drawIcon(document.getElementById('canvas-512'), 512);
+    });
+  </script>
+</body>
+</html>

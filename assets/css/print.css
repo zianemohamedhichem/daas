@@ -1,0 +1,423 @@
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+  }
+
+  .sidebar,
+  .top-navbar,
+  .sidebar-overlay,
+  .navbar-toggle,
+  .sidebar-toggle,
+  .page-actions,
+  .filter-bar,
+  .pagination,
+  .toast-container,
+  .modal-overlay,
+  .btn,
+  .card-footer,
+  .app-footer,
+  .search-bar,
+  .navbar-actions,
+  .page-header-right,
+  .no-print {
+    display: none !important;
+  }
+
+  .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .page-content {
+    padding: 0 !important;
+  }
+
+  .top-navbar {
+    position: static !important;
+    height: auto !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  /* ===========================
+     PRINT COVER PAGE
+     =========================== */
+
+  .print-cover {
+    display: block !important;
+    text-align: center;
+    padding: 60px 40px;
+    page-break-after: always;
+    border: 2px solid #000;
+    margin-bottom: 40px;
+  }
+
+  .print-cover .republic-header {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 12px;
+  }
+
+  .print-cover .motto {
+    font-size: 11pt;
+    font-style: italic;
+    margin-bottom: 30px;
+    color: #333 !important;
+  }
+
+  .print-cover .ministry-info {
+    font-size: 12pt;
+    margin-bottom: 6px;
+  }
+
+  .print-cover .wilaya-info {
+    font-size: 11pt;
+    margin-bottom: 40px;
+    color: #555 !important;
+  }
+
+  .print-cover .register-title {
+    font-size: 22pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 3px solid #000;
+    display: inline-block;
+  }
+
+  .print-cover .cover-info {
+    font-size: 12pt;
+    text-align: start;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .print-cover .cover-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dotted #999;
+  }
+
+  .print-cover .cover-info-label {
+    font-weight: bold;
+    min-width: 180px;
+  }
+
+  .print-cover .cover-info-value {
+    flex: 1;
+    text-align: end;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    margin-inline-start: 20px;
+  }
+
+  .print-cover .cover-date {
+    margin-top: 60px;
+    font-size: 11pt;
+    text-align: end;
+  }
+
+  /* ===========================
+     PRINT REGISTER TABLE
+     =========================== */
+
+  .register-paper {
+    border: 2px solid #000 !important;
+    padding: 30px !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    page-break-before: auto;
+  }
+
+  .register-header {
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .register-republic {
+    font-size: 12pt !important;
+    letter-spacing: 2px !important;
+  }
+
+  .register-ministry {
+    font-size: 10pt !important;
+  }
+
+  .register-title {
+    font-size: 18pt !important;
+    letter-spacing: 3px !important;
+    border: 2px solid #000 !important;
+    padding: 10px 20px !important;
+    display: inline-block !important;
+  }
+
+  .register-info {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  .register-info-item {
+    font-size: 10pt !important;
+  }
+
+  .register-info-item strong {
+    font-size: 9pt !important;
+  }
+
+  .register-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  .register-table th,
+  .register-table td {
+    border: 1px solid #000 !important;
+    padding: 6px 10px !important;
+    font-size: 10pt !important;
+    text-align: center !important;
+  }
+
+  .register-table th {
+    background: #e0e0e0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 9pt !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px;
+  }
+
+  .register-table td.name-cell {
+    text-align: start !important;
+    min-width: 150px !important;
+  }
+
+  [dir="rtl"] .register-table td.name-cell {
+    text-align: right !important;
+  }
+
+  .register-table td.date-cell {
+    width: 70px !important;
+    font-size: 9pt !important;
+  }
+
+  .register-table td.status-cell {
+    font-size: 14pt !important;
+  }
+
+  .register-table td.status-cell.present {
+    color: #059669 !important;
+  }
+
+  .register-table td.status-cell.absent {
+    color: #DC2626 !important;
+  }
+
+  .register-table td.status-cell.late {
+    color: #D97706 !important;
+  }
+
+  .register-table td.status-cell.excused {
+    color: #2563EB !important;
+  }
+
+  .register-table tbody tr:nth-child(even) {
+    background: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .register-footer {
+    margin-top: 30px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid #000 !important;
+  }
+
+  .register-signature {
+    padding-top: 60px !important;
+  }
+
+  .register-signature-label {
+    font-size: 10pt !important;
+    border-top: 1px solid #000;
+    padding-top: 8px;
+    display: inline-block;
+    margin-top: 80px;
+  }
+
+  .register-stamp {
+    padding-top: 60px !important;
+  }
+
+  /* ===========================
+     PRINT PAGE BREAKS
+     =========================== */
+
+  .print-break-before {
+    page-break-before: always;
+  }
+
+  .print-break-after {
+    page-break-after: always;
+  }
+
+  .print-break-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* ===========================
+     PRINT ATTENDANCE SUMMARY
+     =========================== */
+
+  .print-summary {
+    display: block !important;
+    margin-top: 30px;
+    page-break-before: always;
+  }
+
+  .print-summary h3 {
+    font-size: 14pt;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+  }
+
+  .print-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .print-summary-table th,
+  .print-summary-table td {
+    border: 1px solid #000;
+    padding: 8px 12px;
+    font-size: 10pt;
+  }
+
+  .print-summary-table th {
+    background: #e0e0e0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-weight: bold;
+  }
+
+  /* ===========================
+     PRINT NOTES SECTION
+     =========================== */
+
+  .print-notes {
+    display: block !important;
+    margin-top: 30px;
+    page-break-inside: avoid;
+  }
+
+  .print-notes h4 {
+    font-size: 12pt;
+    margin-bottom: 10px;
+  }
+
+  .print-notes-lines {
+    border: 1px solid #000;
+    min-height: 120px;
+    padding: 10px;
+  }
+
+  .print-notes-line {
+    border-bottom: 1px solid #ddd;
+    height: 24px;
+  }
+
+  /* ===========================
+     PRINT FOOTER
+     =========================== */
+
+  .print-page-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    font-size: 8pt;
+    text-align: center;
+    color: #666 !important;
+    border-top: 1px solid #ccc;
+  }
+
+  /* ===========================
+     PRINT HELPERS
+     =========================== */
+
+  .print-visible {
+    display: block !important;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 15mm;
+  }
+
+  @page :first {
+    margin: 20mm;
+  }
+}

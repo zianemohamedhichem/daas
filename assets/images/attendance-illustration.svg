@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e9;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="clipGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5d4037;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3e2723;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#f5f5f5;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="shadow3" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="2" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="penShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#bgGrad3)" rx="12"/>
+
+  <!-- Decorative circles -->
+  <circle cx="360" cy="40" r="25" fill="#4caf50" opacity="0.12"/>
+  <circle cx="40" cy="260" r="20" fill="#66bb6a" opacity="0.1"/>
+  <circle cx="320" cy="250" r="15" fill="#81c784" opacity="0.15"/>
+
+  <!-- Clipboard -->
+  <g filter="url(#shadow3)" transform="translate(100, 20)">
+    <!-- Clipboard board -->
+    <rect x="0" y="30" width="180" height="230" rx="10" fill="url(#clipGrad)"/>
+
+    <!-- Metal clip -->
+    <rect x="65" y="10" width="50" height="35" rx="6" fill="#90a4ae"/>
+    <rect x="70" y="15" width="40" height="25" rx="4" fill="#b0bec5"/>
+    <rect x="75" y="20" width="30" height="8" rx="3" fill="#78909c"/>
+    <!-- Clip shine -->
+    <rect x="72" y="17" width="36" height="3" rx="1.5" fill="#cfd8dc" opacity="0.5"/>
+
+    <!-- Paper -->
+    <rect x="12" y="40" width="156" height="210" rx="4" fill="url(#paperGrad)"/>
+    <!-- Paper shadow edge -->
+    <rect x="14" y="42" width="152" height="206" rx="3" fill="#fff" opacity="0.5"/>
+
+    <!-- Header line -->
+    <rect x="25" y="52" width="100" height="4" rx="2" fill="#c8e6c9"/>
+    <rect x="25" y="60" width="60" height="3" rx="1.5" fill="#e0e0e0"/>
+
+    <!-- Attendance list items -->
+    <!-- Row 1 - Check (present) -->
+    <g transform="translate(25, 78)">
+      <rect x="0" y="0" width="130" height="28" rx="4" fill="#e8f5e9" opacity="0.6"/>
+      <circle cx="14" cy="14" r="10" fill="#4caf50" opacity="0.15"/>
+      <polyline points="8,14 12,18 20,10" stroke="#4caf50" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="30" y="7" width="70" height="4" rx="2" fill="#bdbdbd"/>
+      <rect x="30" y="15" width="45" height="3" rx="1.5" fill="#e0e0e0"/>
+    </g>
+
+    <!-- Row 2 - Check (present) -->
+    <g transform="translate(25, 112)">
+      <rect x="0" y="0" width="130" height="28" rx="4" fill="#e8f5e9" opacity="0.6"/>
+      <circle cx="14" cy="14" r="10" fill="#4caf50" opacity="0.15"/>
+      <polyline points="8,14 12,18 20,10" stroke="#4caf50" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="30" y="7" width="60" height="4" rx="2" fill="#bdbdbd"/>
+      <rect x="30" y="15" width="50" height="3" rx="1.5" fill="#e0e0e0"/>
+    </g>
+
+    <!-- Row 3 - X (absent) -->
+    <g transform="translate(25, 146)">
+      <rect x="0" y="0" width="130" height="28" rx="4" fill="#ffebee" opacity="0.6"/>
+      <circle cx="14" cy="14" r="10" fill="#ef5350" opacity="0.15"/>
+      <line x1="9" y1="9" x2="19" y2="19" stroke="#ef5350" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="19" y1="9" x2="9" y2="19" stroke="#ef5350" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="30" y="7" width="65" height="4" rx="2" fill="#bdbdbd"/>
+      <rect x="30" y="15" width="40" height="3" rx="1.5" fill="#e0e0e0"/>
+    </g>
+
+    <!-- Row 4 - Check (present) -->
+    <g transform="translate(25, 180)">
+      <rect x="0" y="0" width="130" height="28" rx="4" fill="#e8f5e9" opacity="0.6"/>
+      <circle cx="14" cy="14" r="10" fill="#4caf50" opacity="0.15"/>
+      <polyline points="8,14 12,18 20,10" stroke="#4caf50" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="30" y="7" width="55" height="4" rx="2" fill="#bdbdbd"/>
+      <rect x="30" y="15" width="42" height="3" rx="1.5" fill="#e0e0e0"/>
+    </g>
+
+    <!-- Row 5 - Check (present) -->
+    <g transform="translate(25, 214)">
+      <rect x="0" y="0" width="130" height="28" rx="4" fill="#e8f5e9" opacity="0.6"/>
+      <circle cx="14" cy="14" r="10" fill="#4caf50" opacity="0.15"/>
+      <polyline points="8,14 12,18 20,10" stroke="#4caf50" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="30" y="7" width="50" height="4" rx="2" fill="#bdbdbd"/>
+      <rect x="30" y="15" width="38" height="3" rx="1.5" fill="#e0e0e0"/>
+    </g>
+
+    <!-- Clipboard corner fold -->
+    <path d="M148 40 L168 40 L168 60 Z" fill="#e0e0e0" opacity="0.4"/>
+    <path d="M148 40 L148 60 L168 60 Z" fill="#f5f5f5" opacity="0.4"/>
+  </g>
+
+  <!-- Floating Pen -->
+  <g filter="url(#penShadow)" transform="translate(300, 60) rotate(35)">
+    <!-- Pen body -->
+    <rect x="0" y="0" width="10" height="120" rx="3" fill="#1565c0"/>
+    <rect x="0" y="0" width="10" height="20" rx="3" fill="#0d47a1"/>
+    <!-- Pen grip section -->
+    <rect x="0" y="85" width="10" height="25" rx="2" fill="#1976d2"/>
+    <!-- Grip texture -->
+    <line x1="2" y1="90" x2="8" y2="90" stroke="#1565c0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="2" y1="93" x2="8" y2="93" stroke="#1565c0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="2" y1="96" x2="8" y2="96" stroke="#1565c0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="2" y1="99" x2="8" y2="99" stroke="#1565c0" stroke-width="0.5" opacity="0.5"/>
+    <line x1="2" y1="102" x2="8" y2="102" stroke="#1565c0" stroke-width="0.5" opacity="0.5"/>
+    <!-- Pen tip -->
+    <polygon points="2,110 8,110 5,125" fill="#90a4ae"/>
+    <polygon points="3.5,120 6.5,120 5,128" fill="#455a64"/>
+    <!-- Pen clip -->
+    <rect x="8" y="5" width="3" height="50" rx="1.5" fill="#90a4ae"/>
+    <circle cx="9.5" cy="55" r="2" fill="#90a4ae"/>
+    <!-- Pen shine -->
+    <rect x="2" y="2" width="3" height="80" rx="1.5" fill="#fff" opacity="0.1"/>
+  </g>
+
+  <!-- Decorative floating checkmarks -->
+  <g opacity="0.2">
+    <polyline points="320,240 326,246 338,232" stroke="#4caf50" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g opacity="0.15">
+    <polyline points="50,80 54,84 62,74" stroke="#4caf50" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Floating X mark -->
+  <g opacity="0.15">
+    <line x1="55" y1="200" x2="65" y2="210" stroke="#ef5350" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="65" y1="200" x2="55" y2="210" stroke="#ef5350" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Small dots -->
+  <circle cx="350" cy="160" r="3" fill="#81c784" opacity="0.25"/>
+  <circle cx="60" cy="150" r="2" fill="#66bb6a" opacity="0.2"/>
+  <circle cx="380" cy="200" r="2.5" fill="#a5d6a7" opacity="0.2"/>
+</svg>
