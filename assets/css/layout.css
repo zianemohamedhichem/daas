@@ -3,14 +3,7 @@
    =========================== */
 
 .app {
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
   min-height: 100vh;
-  transition: grid-template-columns var(--transition-base);
-}
-
-.app.sidebar-collapsed {
-  grid-template-columns: var(--sidebar-collapsed-width) 1fr;
 }
 
 /* ===========================
