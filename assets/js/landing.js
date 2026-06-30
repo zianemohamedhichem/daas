@@ -79,6 +79,7 @@ window.App.Landing = (function() {
     createParticles();
     setupButtons();
     setupKeyboard();
+    setupAccordion();
   }
 
   function createParticles() {
@@ -150,6 +151,20 @@ window.App.Landing = (function() {
         }, 800);
       }, 1500);
     }, 500);
+  }
+
+  function setupAccordion() {
+    var track = document.getElementById('lp-accordion-track');
+    if (!track) return;
+
+    var items = track.querySelectorAll('.lp-acc-item');
+
+    items.forEach(function(item) {
+      item.addEventListener('mouseenter', function() {
+        items.forEach(function(el) { el.classList.remove('lp-acc-item--active'); });
+        item.classList.add('lp-acc-item--active');
+      });
+    });
   }
 
   return { init: init };

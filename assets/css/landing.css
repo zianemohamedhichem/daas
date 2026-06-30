@@ -721,6 +721,209 @@
   }
 }
 
+/* ============================================================
+   IMAGE ACCORDION SECTION
+   ============================================================ */
+
+.lp-section--accordion {
+  background: #fff;
+  padding-block: 0;
+}
+
+.lp-accordion-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  min-height: 520px;
+  padding-block: 80px clamp(48px, 6vw, 80px);
+}
+
+/* ── LEFT TEXT ─────────────────────────────────────────────── */
+.lp-accordion-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lp-accordion-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.lp-accordion-desc {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.7;
+  color: #6B7280;
+  margin: 0;
+  max-width: 480px;
+}
+
+.lp-btn--dark {
+  background: #111827;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  align-self: flex-start;
+}
+
+.lp-btn--dark:hover {
+  background: #1F2937;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* ── ACCORDION TRACK ───────────────────────────────────────── */
+.lp-accordion-track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0;
+  scrollbar-width: none;
+}
+
+.lp-accordion-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── ACCORDION ITEM ────────────────────────────────────────── */
+.lp-acc-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 60px;
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lp-acc-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.lp-acc-item:hover img {
+  transform: scale(1.05);
+}
+
+.lp-acc-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.4s ease;
+}
+
+.lp-acc-item:hover .lp-acc-overlay,
+.lp-acc-item--active .lp-acc-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ── LABEL ─────────────────────────────────────────────────── */
+.lp-acc-label {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-90deg);
+  transform-origin: center center;
+  white-space: nowrap;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+/* ── ACTIVE STATE ──────────────────────────────────────────── */
+.lp-acc-item--active,
+.lp-acc-item.lp-acc-item--active {
+  width: 400px;
+}
+
+.lp-acc-item--active .lp-acc-label,
+.lp-acc-item.lp-acc-item--active .lp-acc-label {
+  transform: translateX(-50%) rotate(0deg);
+  bottom: 24px;
+}
+
+/* ── ACCORDION RESPONSIVE ──────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .lp-accordion-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .lp-accordion-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .lp-accordion-desc {
+    max-width: 100%;
+  }
+
+  .lp-btn--dark {
+    align-self: center;
+  }
+
+  .lp-accordion-track {
+    justify-content: center;
+    overflow-x: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .lp-acc-item {
+    height: 360px;
+  }
+
+  .lp-acc-item--active,
+  .lp-acc-item.lp-acc-item--active {
+    width: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .lp-acc-item {
+    height: 300px;
+  }
+
+  .lp-acc-item--active,
+  .lp-acc-item.lp-acc-item--active {
+    width: 220px;
+  }
+
+  .lp-acc-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── REDUCED MOTION ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .lp-acc-item {
+    transition: width 0.1s ease !important;
+  }
+  .lp-acc-item img {
+    transition: none !important;
+  }
+}
+
 /* ── PRINT ─────────────────────────────────────────────────── */
 @media print {
   .landing-page { display: none !important; }
