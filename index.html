@@ -179,36 +179,124 @@
         <div class="lp-container">
           <div class="lp-accordion-layout">
             <div class="lp-accordion-text">
-              <h2 class="lp-accordion-heading">Accelerate Gen-AI Tasks on Any Device</h2>
-              <p class="lp-accordion-desc">Build high-performance AI apps on-device without the hassle of model compression or edge deployment.</p>
-              <a href="#/dashboard" class="lp-btn lp-btn--dark">Commencer</a>
+              <h2 class="lp-accordion-heading" data-i18n="accordion.heading">Gérez votre classe avec intelligence</h2>
+              <p class="lp-accordion-desc" data-i18n="accordion.desc">Suivez les présences, générez les rapports et gérez votre classe — le tout en un seul endroit, même sans connexion.</p>
+              <a href="#/dashboard" class="lp-btn lp-btn--primary">
+                <span data-i18n="accordion.cta">Commencer maintenant</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
             </div>
             <div class="lp-accordion-track" id="lp-accordion-track">
-              <div class="lp-acc-item" data-index="0">
-                <img src="https://images.unsplash.com/photo-1628258334105-2a0b3d6efee1?q=80&w=800&auto=format&fit=crop" alt="Voice Assistant" loading="lazy">
+
+              <!-- Item 1: Gestion des Élèves -->
+              <div class="lp-acc-item lp-acc-item--active" data-index="0">
+                <div class="lp-acc-illust lp-acc-illust--students">
+                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="200" rx="12" fill="#ECFDF5"/>
+                    <circle cx="100" cy="70" r="24" fill="#10B981"/>
+                    <path d="M60 140c0-22 18-40 40-40s40 18 40 40" fill="#10B981" opacity="0.6"/>
+                    <circle cx="60" cy="85" r="14" fill="#1D4ED8"/>
+                    <path d="M38 140c0-12 10-22 22-22" fill="#1D4ED8" opacity="0.4"/>
+                    <circle cx="140" cy="85" r="14" fill="#F59E0B"/>
+                    <path d="M140 118c0-12 10-22 22-22" fill="#F59E0B" opacity="0.4"/>
+                    <rect x="75" y="155" width="50" height="8" rx="4" fill="#10B981" opacity="0.3"/>
+                  </svg>
+                </div>
                 <div class="lp-acc-overlay"></div>
-                <span class="lp-acc-label">Voice Assistant</span>
+                <span class="lp-acc-label" data-i18n="accordion.students">Gestion des Élèves</span>
               </div>
+
+              <!-- Item 2: Registre Officiel -->
               <div class="lp-acc-item" data-index="1">
-                <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800&auto=format&fit=crop" alt="AI Image Generation" loading="lazy">
+                <div class="lp-acc-illust lp-acc-illust--register">
+                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="200" rx="12" fill="#EFF6FF"/>
+                    <rect x="50" y="30" width="100" height="140" rx="8" fill="#fff" stroke="#1D4ED8" stroke-width="2"/>
+                    <rect x="62" y="50" width="76" height="6" rx="3" fill="#1D4ED8" opacity="0.3"/>
+                    <rect x="62" y="64" width="56" height="4" rx="2" fill="#94A3B8" opacity="0.5"/>
+                    <line x1="62" y1="80" x2="138" y2="80" stroke="#E5E7EB" stroke-width="1"/>
+                    <rect x="62" y="88" width="12" height="12" rx="2" fill="#10B981"/>
+                    <rect x="80" y="90" width="40" height="3" rx="1.5" fill="#94A3B8" opacity="0.4"/>
+                    <rect x="62" y="108" width="12" height="12" rx="2" fill="#10B981"/>
+                    <rect x="80" y="110" width="32" height="3" rx="1.5" fill="#94A3B8" opacity="0.4"/>
+                    <rect x="62" y="128" width="12" height="12" rx="2" fill="#F59E0B"/>
+                    <rect x="80" y="130" width="36" height="3" rx="1.5" fill="#94A3B8" opacity="0.4"/>
+                    <circle cx="145" cy="45" r="12" fill="#10B981"/>
+                    <path d="M140 45l3 3 7-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
                 <div class="lp-acc-overlay"></div>
-                <span class="lp-acc-label">AI Image Generation</span>
+                <span class="lp-acc-label" data-i18n="accordion.register">Registre Officiel</span>
               </div>
+
+              <!-- Item 3: Suivi des Présences -->
               <div class="lp-acc-item" data-index="2">
-                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="AI Chatbot" loading="lazy">
+                <div class="lp-acc-illust lp-acc-illust--attendance">
+                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="200" rx="12" fill="#FFFBEB"/>
+                    <rect x="40" y="40" width="120" height="120" rx="16" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+                    <circle cx="75" cy="75" r="10" fill="#10B981"/>
+                    <path d="M71 75l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="125" cy="75" r="10" fill="#EF4444"/>
+                    <path d="M121 71l8 8M129 71l-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="75" cy="115" r="10" fill="#10B981"/>
+                    <path d="M71 115l3 3 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="125" cy="115" r="10" fill="#F59E0B"/>
+                    <path d="M125 111v4M125 120v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
                 <div class="lp-acc-overlay"></div>
-                <span class="lp-acc-label">AI Chatbot + Local RAG</span>
+                <span class="lp-acc-label" data-i18n="accordion.attendance">Suivi des Présences</span>
               </div>
+
+              <!-- Item 4: Tableau de Bord -->
               <div class="lp-acc-item" data-index="3">
-                <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=800&auto=format&fit=crop" alt="AI Agent" loading="lazy">
+                <div class="lp-acc-illust lp-acc-illust--dashboard">
+                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="200" rx="12" fill="#F0FDF4"/>
+                    <rect x="30" y="50" width="140" height="100" rx="12" fill="#fff" stroke="#10B981" stroke-width="2"/>
+                    <rect x="42" y="62" width="36" height="36" rx="8" fill="#10B981" opacity="0.15"/>
+                    <rect x="42" y="62" width="36" height="28" rx="4" fill="#10B981" opacity="0.3"/>
+                    <rect x="82" y="62" width="36" height="36" rx="8" fill="#1D4ED8" opacity="0.15"/>
+                    <rect x="82" y="62" width="36" height="20" rx="4" fill="#1D4ED8" opacity="0.3"/>
+                    <rect x="122" y="62" width="36" height="36" rx="8" fill="#F59E0B" opacity="0.15"/>
+                    <rect x="122" y="62" width="36" height="24" rx="4" fill="#F59E0B" opacity="0.3"/>
+                    <rect x="42" y="108" width="116" height="30" rx="6" fill="#10B981" opacity="0.1"/>
+                    <rect x="48" y="116" width="40" height="6" rx="3" fill="#10B981" opacity="0.4"/>
+                    <rect x="48" y="126" width="60" height="4" rx="2" fill="#94A3B8" opacity="0.3"/>
+                    <path d="M120 116l8 6-8 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
                 <div class="lp-acc-overlay"></div>
-                <span class="lp-acc-label">AI Agent</span>
+                <span class="lp-acc-label" data-i18n="accordion.dashboard">Tableau de Bord</span>
               </div>
-              <div class="lp-acc-item lp-acc-item--active" data-index="4">
-                <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=800&auto=format&fit=crop" alt="Visual Understanding" loading="lazy">
+
+              <!-- Item 5: Statistiques -->
+              <div class="lp-acc-item" data-index="4">
+                <div class="lp-acc-illust lp-acc-illust--stats">
+                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="200" height="200" rx="12" fill="#FDF4FF"/>
+                    <rect x="30" y="40" width="140" height="120" rx="12" fill="#fff" stroke="#8B5CF6" stroke-width="2"/>
+                    <rect x="48" y="120" width="16" height="28" rx="4" fill="#10B981"/>
+                    <rect x="72" y="100" width="16" height="48" rx="4" fill="#1D4ED8"/>
+                    <rect x="96" y="80" width="16" height="68" rx="4" fill="#10B981"/>
+                    <rect x="120" y="90" width="16" height="58" rx="4" fill="#F59E0B"/>
+                    <rect x="144" y="70" width="16" height="78" rx="4" fill="#10B981"/>
+                    <circle cx="56" cy="112" r="4" fill="#10B981"/>
+                    <circle cx="80" cy="92" r="4" fill="#1D4ED8"/>
+                    <circle cx="104" cy="72" r="4" fill="#10B981"/>
+                    <circle cx="128" cy="82" r="4" fill="#F59E0B"/>
+                    <circle cx="152" cy="62" r="4" fill="#10B981"/>
+                    <line x1="56" y1="112" x2="80" y2="92" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="80" y1="92" x2="104" y2="72" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="104" y1="72" x2="128" y2="82" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <line x1="128" y1="82" x2="152" y2="62" stroke="#1D4ED8" stroke-width="1.5" stroke-dasharray="3 3"/>
+                  </svg>
+                </div>
                 <div class="lp-acc-overlay"></div>
-                <span class="lp-acc-label">Visual Understanding</span>
+                <span class="lp-acc-label" data-i18n="accordion.stats">Statistiques</span>
               </div>
+
             </div>
           </div>
         </div>

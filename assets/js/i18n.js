@@ -176,6 +176,16 @@ window.App.I18n = (function () {
       },
       sync: {
         saving: 'Sauvegarde...'
+      },
+      accordion: {
+        heading: 'Gérez votre classe avec intelligence',
+        desc: 'Suivez les présences, générez les rapports et gérez votre classe — le tout en un seul endroit, même sans connexion.',
+        cta: 'Commencer maintenant',
+        students: 'Gestion des Élèves',
+        register: 'Registre Officiel',
+        attendance: 'Suivi des Présences',
+        dashboard: 'Tableau de Bord',
+        stats: 'Statistiques'
       }
     },
     ar: {
@@ -350,6 +360,16 @@ window.App.I18n = (function () {
       },
       sync: {
         saving: 'جاري الحفظ...'
+      },
+      accordion: {
+        heading: 'إدارة فصلك بذكاء',
+        desc: 'تتبع الحضور، وإنشاء التقارير، وإدارة فصلك — كل ذلك في مكان واحد، حتى بدون اتصال.',
+        cta: 'ابدأ الآن',
+        students: 'إدارة التلاميذ',
+        register: 'السجل الرسمي',
+        attendance: 'تتبع الحضور',
+        dashboard: 'لوحة التحكم',
+        stats: 'الإحصائيات'
       }
     }
   };
