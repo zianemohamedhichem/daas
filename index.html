@@ -62,216 +62,153 @@
 
     <!-- Landing Page Overlay -->
     <div id="landing-page" class="landing-page" style="display:none">
-      <div class="landing-bg">
-        <div class="landing-rays"></div>
+      <div class="landing-bg" aria-hidden="true">
+        <div class="landing-bg-blob landing-bg-blob--1"></div>
+        <div class="landing-bg-blob landing-bg-blob--2"></div>
         <div class="landing-particles" id="landing-particles"></div>
-        <div class="floating-element floating-el-1">📚</div>
-        <div class="floating-element floating-el-2">📖</div>
-        <div class="floating-element floating-el-3">ABC</div>
-        <div class="floating-element floating-el-4">🌿</div>
-        <div class="floating-element floating-el-5">📝</div>
-        <div class="floating-element floating-el-6">📚</div>
-        <div class="floating-element floating-el-7">📖</div>
       </div>
 
-      <!-- Hero Section -->
-      <div class="landing-content">
-        <div class="landing-left">
-          <div class="landing-badge-group">
-            <span class="landing-badge">📱 Offline Ready</span>
-            <span class="landing-badge">⚡ PWA</span>
-            <span class="landing-badge">🔒 Secure</span>
-            <span class="landing-badge">🚀 Fast</span>
-            <span class="landing-badge">🐙 GitHub Pages</span>
-          </div>
-          <h1 class="landing-title">Registre d'Appel<br>Numérique</h1>
-          <p class="landing-subtitle-ar" dir="rtl" lang="ar">سجل الحضور الرقمي الذكي</p>
-          <p class="landing-description">A modern digital attendance platform designed for Algerian primary schools.</p>
-          <div class="landing-welcome-card">
-            <div class="welcome-avatar">DS</div>
-            <div class="welcome-info">
-              <div class="welcome-name">Daas Saïda <span class="welcome-name-ar">دعاس سعيدة</span></div>
-              <div class="welcome-role">Enseignante · École Omar Hamroune</div>
-              <div class="welcome-year">Année scolaire 2026–2027</div>
+      <!-- HERO -->
+      <section class="lp-hero">
+        <div class="lp-hero-inner">
+          <div class="lp-hero-left">
+            <div class="lp-badges">
+              <span class="lp-badge">Offline Ready</span>
+              <span class="lp-badge">PWA</span>
+              <span class="lp-badge">Secure</span>
+              <span class="lp-badge">Fast</span>
             </div>
-          </div>
-          <div class="landing-actions">
-            <button id="landing-commencer" class="landing-btn landing-btn-primary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-              <span>Commencer</span>
-            </button>
-            <button id="landing-decouvrir" class="landing-btn landing-btn-secondary">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-              <span>Découvrir</span>
-            </button>
-          </div>
-        </div>
-        <div class="landing-right">
-          <div class="smart-board">
-            <div class="board-screen">
-              <h2>Bonjour !</h2>
-              <p>Bienvenue</p>
-              <p class="board-subtitle">Registre d'Appel Numérique</p>
-              <p class="board-desc">Gestion intelligente de la présence scolaire</p>
-              <div class="board-preview">
-                <div class="board-stat">
-                  <span class="board-stat-number">20</span>
-                  <span class="board-stat-label">Élèves</span>
-                </div>
-                <div class="board-stat">
-                  <span class="board-stat-number">2</span>
-                  <span class="board-stat-label">Classes</span>
-                </div>
-                <div class="board-stat">
-                  <span class="board-stat-number">94%</span>
-                  <span class="board-stat-label">Présence</span>
-                </div>
+            <h1 class="lp-title">Registre d'Appel<br>Numérique</h1>
+            <p class="lp-subtitle-ar" dir="rtl" lang="ar">سجل الحضور الرقمي الذكي</p>
+            <p class="lp-desc">A modern digital attendance platform designed for Algerian primary schools. Track attendance, generate reports, and manage your classroom — all offline.</p>
+            <div class="lp-welcome-card">
+              <div class="lp-welcome-avatar">DS</div>
+              <div class="lp-welcome-info">
+                <span class="lp-welcome-name">Daas Saïda <span lang="ar">دعاس سعيدة</span></span>
+                <span class="lp-welcome-meta">Enseignante · École Omar Hamroune</span>
+                <span class="lp-welcome-meta">Année scolaire 2026–2027</span>
               </div>
             </div>
-          </div>
-          <div class="landing-teacher">
-            <img src="assets/images/teacher-landing.svg" alt="Enseignante">
-          </div>
-        </div>
-      </div>
-
-      <!-- Features Section -->
-      <div class="landing-features" id="landing-features">
-        <h2 class="landing-features-title">Fonctionnalités</h2>
-        <p class="landing-features-subtitle">Tout ce dont vous avez besoin pour gérer vos présences</p>
-        <div class="landing-features-grid">
-          <div class="landing-feature-card">
-            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+            <div class="lp-actions">
+              <button id="landing-commencer" class="lp-btn lp-btn--primary">
+                <span>Commencer</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+              <button id="landing-decouvrir" class="lp-btn lp-btn--ghost">
+                <span>Découvrir</span>
+              </button>
             </div>
-            <h3 class="landing-feature-title">Statistiques en temps réel</h3>
-            <p class="landing-feature-desc">Suivez la progression de vos classes avec des graphiques interactifs et des indicateurs clairs.</p>
           </div>
-          <div class="landing-feature-card">
-            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#1D4ED8,#1B3A9E)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <div class="lp-hero-right">
+            <div class="lp-illustration">
+              <img src="assets/images/teacher-landing.svg" alt="Enseignante" width="520" height="520" loading="eager">
             </div>
-            <h3 class="landing-feature-title">Registre officiel PDF</h3>
-            <p class="landing-feature-desc">Exportez vos registres en PDF ou Excel, prêts pour l'inspection et la direction.</p>
-          </div>
-          <div class="landing-feature-card">
-            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#F59E0B,#D97706)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <h3 class="landing-feature-title">Mobile-first PWA</h3>
-            <p class="landing-feature-desc">Installez l'application sur votre téléphone pour un accès rapide, même sans connexion.</p>
-          </div>
-          <div class="landing-feature-card">
-            <div class="landing-feature-icon" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED)">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <h3 class="landing-feature-title">Hors ligne</h3>
-            <p class="landing-feature-desc">Fonctionne parfaitement sans connexion internet. Toutes vos données restent sécurisées.</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Smart Board Section -->
-      <div class="landing-smartboard-section">
-        <h2 class="landing-features-title">Tableau de bord intelligent</h2>
-        <p class="landing-features-subtitle">Visualisez les présences en un clin d'œil</p>
-        <div class="landing-smartboard-demo">
-          <div class="landing-demo-grid">
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Amina B.</span>
+      <!-- FEATURES -->
+      <section class="lp-section">
+        <div class="lp-container">
+          <h2 class="lp-section-title">Fonctionnalités</h2>
+          <p class="lp-section-subtitle">Tout ce dont vous avez besoin pour gérer vos présences</p>
+          <div class="lp-features-grid">
+            <div class="lp-feature-card">
+              <div class="lp-feature-icon" style="background:linear-gradient(135deg,#10B981,#059669)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <h3>Statistiques en temps réel</h3>
+              <p>Suivez la progression de vos classes avec des graphiques interactifs et des indicateurs clairs.</p>
             </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Mohamed K.</span>
+            <div class="lp-feature-card">
+              <div class="lp-feature-icon" style="background:linear-gradient(135deg,#1D4ED8,#1B3A9E)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <h3>Registre officiel PDF</h3>
+              <p>Exportez vos registres en PDF ou Excel, prêts pour l'inspection et la direction.</p>
             </div>
-            <div class="landing-demo-cell absent-cell">
-              <span class="demo-dot"></span>
-              <span>Fatima S.</span>
+            <div class="lp-feature-card">
+              <div class="lp-feature-icon" style="background:linear-gradient(135deg,#F59E0B,#D97706)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <h3>Mobile-first PWA</h3>
+              <p>Installez l'application sur votre téléphone pour un accès rapide, même sans connexion.</p>
             </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Ahmed L.</span>
+            <div class="lp-feature-card">
+              <div class="lp-feature-icon" style="background:linear-gradient(135deg,#8B5CF6,#7C3AED)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3>Hors ligne</h3>
+              <p>Fonctionne parfaitement sans connexion internet. Toutes vos données restent sécurisées.</p>
             </div>
-            <div class="landing-demo-cell late-cell">
-              <span class="demo-dot"></span>
-              <span>Yacine M.</span>
-            </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Nadia R.</span>
-            </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Sofiane T.</span>
-            </div>
-            <div class="landing-demo-cell absent-cell">
-              <span class="demo-dot"></span>
-              <span>Lina H.</span>
-            </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Karim D.</span>
-            </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Meriem A.</span>
-            </div>
-            <div class="landing-demo-cell late-cell">
-              <span class="demo-dot"></span>
-              <span>Omar B.</span>
-            </div>
-            <div class="landing-demo-cell present-cell">
-              <span class="demo-dot"></span>
-              <span>Houda C.</span>
-            </div>
-          </div>
-          <div class="landing-demo-legend">
-            <span class="legend-item"><span class="legend-dot" style="background:#10B981"></span>Présent</span>
-            <span class="legend-item"><span class="legend-dot" style="background:#EF4444"></span>Absent</span>
-            <span class="legend-item"><span class="legend-dot" style="background:#F59E0B"></span>Retard</span>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Teacher Profile Teaser -->
-      <div class="landing-profile-section">
-        <div class="landing-profile-card">
-          <div class="landing-profile-avatar">
-            <svg viewBox="0 0 96 96" width="96" height="96" fill="none">
-              <circle cx="48" cy="48" r="46" fill="url(#avatarGrad)"/>
-              <text x="48" y="52" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700">DS</text>
-              <defs><linearGradient id="avatarGrad" x1="0" y1="0" x2="96" y2="96"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
-            </svg>
+      <!-- SMART BOARD PREVIEW -->
+      <section class="lp-section lp-section--alt">
+        <div class="lp-container">
+          <h2 class="lp-section-title">Tableau de bord intelligent</h2>
+          <p class="lp-section-subtitle">Visualisez les présences en un clin d'œil</p>
+          <div class="lp-smartboard">
+            <div class="lp-demo-grid">
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Amina B.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Mohamed K.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--absent"><span class="lp-dot"></span><span>Fatima S.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Ahmed L.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--late"><span class="lp-dot"></span><span>Yacine M.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Nadia R.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Sofiane T.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--absent"><span class="lp-dot"></span><span>Lina H.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Karim D.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Meriem A.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--late"><span class="lp-dot"></span><span>Omar B.</span></div>
+              <div class="lp-demo-cell lp-demo-cell--present"><span class="lp-dot"></span><span>Houda C.</span></div>
+            </div>
+            <div class="lp-demo-legend">
+              <span class="lp-legend-item"><span class="lp-dot lp-dot--present"></span>Présent</span>
+              <span class="lp-legend-item"><span class="lp-dot lp-dot--absent"></span>Absent</span>
+              <span class="lp-legend-item"><span class="lp-dot lp-dot--late"></span>Retard</span>
+            </div>
           </div>
-          <div class="landing-profile-info">
-            <h3>Daas Saïda <span dir="rtl">دعاس سعيدة</span></h3>
-            <p>Professeure de Français · École Omar Hamroune</p>
-            <p class="landing-profile-location">Bouzareah, Alger · 2026–2027</p>
-          </div>
-          <button class="landing-btn landing-btn-primary" onclick="window.location.hash='#/dashboard'">
-            Voir le tableau de bord
-          </button>
         </div>
-      </div>
+      </section>
 
-      <!-- Footer -->
-      <footer class="landing-footer">
-        <div class="landing-footer-content">
-          <div class="landing-footer-left">
-            <span class="landing-footer-brand">École Omar Hamroune · 2026–2027</span>
+      <!-- TEACHER CARD -->
+      <section class="lp-section">
+        <div class="lp-container">
+          <div class="lp-teacher-card">
+            <div class="lp-teacher-avatar">
+              <svg viewBox="0 0 96 96" width="80" height="80" fill="none">
+                <circle cx="48" cy="48" r="46" fill="url(#lpAvatarGrad)"/>
+                <text x="48" y="52" text-anchor="middle" dominant-baseline="central" fill="#fff" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="700">DS</text>
+                <defs><linearGradient id="lpAvatarGrad" x1="0" y1="0" x2="96" y2="96"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div class="lp-teacher-info">
+              <h3>Daas Saïda <span lang="ar">دعاس سعيدة</span></h3>
+              <p>Professeure de Français · École Omar Hamroune</p>
+              <p class="lp-teacher-location">Bouzareah, Alger · 2026–2027</p>
+            </div>
+            <button class="lp-btn lp-btn--primary" onclick="window.location.hash='#/dashboard'">Voir le tableau de bord</button>
           </div>
-          <div class="landing-footer-center">
-            <span class="landing-footer-badge">PWA</span>
-            <span class="landing-footer-badge">Offline</span>
-            <span class="landing-footer-badge">Open Source</span>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="lp-footer">
+        <div class="lp-container lp-footer-inner">
+          <span class="lp-footer-brand">École Omar Hamroune · 2026–2027</span>
+          <div class="lp-footer-badges">
+            <span class="lp-footer-badge">PWA</span>
+            <span class="lp-footer-badge">Offline</span>
+            <span class="lp-footer-badge">Open Source</span>
           </div>
-          <div class="landing-footer-right">
-            <span>Développé avec ❤️ pour l'éducation algérienne</span>
-          </div>
+          <span class="lp-footer-credit">Développé avec ❤️ pour l'éducation algérienne</span>
         </div>
       </footer>
 
+      <!-- LOADING OVERLAY -->
       <div id="landing-loading" class="landing-loading">
         <div class="loading-logo">
           <div class="loading-spinner"></div>

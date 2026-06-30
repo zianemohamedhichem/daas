@@ -72,7 +72,7 @@ window.App.Landing = (function() {
       return;
     }
 
-    landingEl.style.display = 'flex';
+    landingEl.style.display = 'block';
     loadingEl = document.getElementById('landing-loading');
     progressBar = document.getElementById('loading-progress');
 
@@ -106,7 +106,7 @@ window.App.Landing = (function() {
     }
     if (decouvrirBtn) {
       decouvrirBtn.addEventListener('click', function() {
-        var welcomeCard = document.querySelector('.landing-welcome-card');
+        var welcomeCard = document.querySelector('.lp-welcome-card');
         if (welcomeCard) {
           welcomeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
           setTimeout(startTransition, 1500);
