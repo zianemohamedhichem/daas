@@ -6,6 +6,7 @@ window.App.Pages.Dashboard = (function () {
 
   function render() {
     var now = window.App.Dates.today();
+    var dateObj = new Date();
     var dateStr = window.App.Dates.formatDate(now);
     var lang = window.App.I18n.getLanguage();
     var dayName = window.App.Dates.getDayName(now, lang);
@@ -84,7 +85,7 @@ window.App.Pages.Dashboard = (function () {
         /* Calendar Mini-View */
         '<div class="chart-container">' +
           '<div class="chart-header">' +
-            '<span class="chart-title" style="display:inline-flex;align-items:center;gap:var(--space-2)"><span data-lucide="calendar-days" style="width:18px;height:18px;color:var(--info)"></span>' + window.App.Dates.getMonthName(now.getMonth(), lang) + ' ' + now.getFullYear() + '</span>' +
+            '<span class="chart-title" style="display:inline-flex;align-items:center;gap:var(--space-2)"><span data-lucide="calendar-days" style="width:18px;height:18px;color:var(--info)"></span>' + window.App.Dates.getMonthName(dateObj.getMonth(), lang) + ' ' + dateObj.getFullYear() + '</span>' +
           '</div>' +
           '<div id="dashboard-calendar" style="min-height:200px"></div>' +
         '</div>' +
