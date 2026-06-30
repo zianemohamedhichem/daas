@@ -63,14 +63,14 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(16, 185, 129, 0.25);
+  background: var(--primary);
+  color: var(--primary-on);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(27, 42, 74, 0.2);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-light), var(--primary));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(16, 185, 129, 0.3);
+  background: var(--primary-light);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(27, 42, 74, 0.25);
   transform: translateY(-2px);
 }
 
@@ -79,14 +79,14 @@
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--secondary), #1B3A9E);
-  color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(29, 78, 216, 0.25);
+  background: var(--secondary);
+  color: var(--secondary-on);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(122, 46, 58, 0.2);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(29, 78, 216, 0.3);
+  background: var(--secondary-light);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(122, 46, 58, 0.25);
   transform: translateY(-2px);
 }
 
@@ -124,50 +124,50 @@
 }
 
 .btn-danger {
-  background: linear-gradient(135deg, var(--danger), #DC2626);
-  color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(239, 68, 68, 0.25);
+  background: var(--danger);
+  color: var(--danger-on);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(158, 59, 59, 0.2);
 }
 
 .btn-danger:hover {
-  background: linear-gradient(135deg, var(--danger-light), var(--danger));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(239, 68, 68, 0.3);
+  background: var(--danger-light);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(158, 59, 59, 0.25);
   transform: translateY(-2px);
 }
 
 .btn-success {
-  background: linear-gradient(135deg, var(--success), var(--primary-dark));
-  color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(16, 185, 129, 0.25);
+  background: var(--success);
+  color: var(--success-on);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(46, 125, 90, 0.2);
 }
 
 .btn-success:hover {
-  background: linear-gradient(135deg, var(--success-light), var(--success));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(16, 185, 129, 0.3);
+  background: var(--success-light);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(46, 125, 90, 0.25);
   transform: translateY(-2px);
 }
 
 .btn-warning {
-  background: linear-gradient(135deg, var(--warning), #D97706);
-  color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(245, 158, 11, 0.25);
+  background: var(--warning);
+  color: var(--warning-on);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(184, 134, 11, 0.2);
 }
 
 .btn-warning:hover {
-  background: linear-gradient(135deg, var(--warning-light), var(--warning));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(245, 158, 11, 0.3);
+  background: var(--warning-light);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(184, 134, 11, 0.25);
   transform: translateY(-2px);
 }
 
 .btn-info {
-  background: linear-gradient(135deg, var(--info), #1B3A9E);
-  color: #ffffff;
-  box-shadow: var(--shadow-sm), 0 2px 8px rgba(29, 78, 216, 0.25);
+  background: var(--info);
+  color: var(--info-on);
+  box-shadow: var(--shadow-sm), 0 2px 8px rgba(46, 107, 138, 0.2);
 }
 
 .btn-info:hover {
-  background: linear-gradient(135deg, var(--info-light), var(--info));
-  box-shadow: var(--shadow-md), 0 4px 16px rgba(29, 78, 216, 0.3);
+  background: var(--info-light);
+  box-shadow: var(--shadow-md), 0 4px 16px rgba(46, 107, 138, 0.25);
   transform: translateY(-2px);
 }
 
@@ -1342,8 +1342,8 @@ textarea.form-control {
   border-radius: var(--radius-full);
   overflow: hidden;
   flex-shrink: 0;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--primary-on);
   font-weight: var(--font-semibold);
   font-family: var(--font-heading);
 }

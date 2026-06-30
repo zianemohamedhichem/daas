@@ -1,4 +1,4 @@
-const CACHE_NAME = 'registre-v3';
+const CACHE_NAME = 'atelier-v1';
 
 const STATIC_ASSETS = [
     './',

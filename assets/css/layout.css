@@ -48,15 +48,15 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--primary-on);
   font-weight: var(--font-bold);
   font-size: var(--text-lg);
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 8px rgba(27, 42, 74, 0.2);
 }
 
 .sidebar-brand {
@@ -71,14 +71,14 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--primary-on);
   font-size: 18px;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 2px 8px rgba(27, 42, 74, 0.2);
 }
 
 .sidebar-brand .brand-text {
@@ -233,8 +233,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: white;
+  background: var(--primary);
+  color: var(--primary-on);
   display: flex;
   align-items: center;
   justify-content: center;

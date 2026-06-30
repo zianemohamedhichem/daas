@@ -1,69 +1,98 @@
+/* ============================================================
+   L'ATELIER — Design Tokens
+   "La langue comme artisanat"
+   ============================================================ */
+
 :root {
-  --primary: #10B981;
-  --primary-light: #6EE7B7;
-  --primary-dark: #059669;
-  --primary-surface: #ECFDF5;
-  --primary-on: #ffffff;
+  /* ── Brand Colors ────────────────────────────────────────── */
 
-  --secondary: #1D4ED8;
-  --secondary-light: #3B82F6;
-  --secondary-surface: #EFF6FF;
-  --secondary-on: #ffffff;
+  /* Bleu Encre — ink blue. Authority, trust. Primary text,
+     headings, logomark, interactive states. Never as background. */
+  --primary: #1B2A4A;
+  --primary-light: #2D4A7A;
+  --primary-dark: #0F1A30;
+  --primary-surface: rgba(27, 42, 74, 0.06);
+  --primary-on: #FAF7F0;
 
-  --accent: #F59E0B;
-  --accent-light: #FCD34D;
-  --accent-surface: #FFFBEB;
-  --accent-on: #ffffff;
+  /* Bordeaux Doux — soft burgundy. Classic warmth. Secondary
+     accents, hover states, emphasis. Max twice per screen. */
+  --secondary: #7A2E3A;
+  --secondary-light: #9E4A58;
+  --secondary-surface: rgba(122, 46, 58, 0.08);
+  --secondary-on: #FAF7F0;
 
-  --success: #10B981;
-  --success-light: #34D399;
-  --success-surface: #ECFDF5;
-  --success-on: #ffffff;
+  /* Or Manuscrit — manuscript gold. Distinction, not decoration.
+     Exactly ONE element per view: a single CTA, highlight, or
+     active indicator. Never as background. */
+  --accent: #C9A24B;
+  --accent-light: #D4B56A;
+  --accent-surface: rgba(201, 162, 75, 0.08);
+  --accent-on: #1B2A4A;
 
-  --danger: #EF4444;
-  --danger-light: #F87171;
-  --danger-surface: #FEF2F2;
-  --danger-on: #ffffff;
+  /* Semantic aliases — map brand colors to semantic roles */
+  --success: #2E7D5A;
+  --success-light: #4A9E76;
+  --success-surface: rgba(46, 125, 90, 0.08);
+  --success-on: #FAF7F0;
 
-  --warning: #F59E0B;
-  --warning-light: #FBBF24;
-  --warning-surface: #FFFBEB;
-  --warning-on: #ffffff;
+  --danger: #9E3B3B;
+  --danger-light: #C45454;
+  --danger-surface: rgba(158, 59, 59, 0.08);
+  --danger-on: #FAF7F0;
 
-  --info: #2563EB;
-  --info-light: #60A5FA;
-  --info-surface: #EFF6FF;
-  --info-on: #ffffff;
+  --warning: #B8860B;
+  --warning-light: #D4A017;
+  --warning-surface: rgba(184, 134, 11, 0.08);
+  --warning-on: #1B2A4A;
 
-  --background: #FAFAF9;
+  --info: #2E6B8A;
+  --info-light: #4A8FAD;
+  --info-surface: rgba(46, 107, 138, 0.08);
+  --info-on: #FAF7F0;
+
+  /* ── Surfaces ────────────────────────────────────────────── */
+
+  /* Blanc Cassé — warm off-white. Paper-like surface. All
+     backgrounds, cards, and surfaces. Never pure #FFFFFF. */
+  --background: #FAF7F0;
   --surface: #FFFFFF;
-  --surface-variant: #F5F5F4;
-  --surface-hover: #EFEDE8;
+  --surface-variant: #F5F0E6;
+  --surface-hover: #EDE8DC;
   --surface-elevated: #FFFFFF;
-  --surface-overlay: rgba(0, 0, 0, 0.04);
+  --surface-overlay: rgba(27, 42, 74, 0.04);
 
-  --text: #0F172A;
-  --text-secondary: #64748B;
-  --text-tertiary: #94A3B8;
-  --text-on-primary: #ffffff;
-  --text-on-secondary: #ffffff;
+  /* ── Text ────────────────────────────────────────────────── */
 
-  --border: #E7E5E4;
-  --border-light: #F1EFEB;
+  /* Gris Encre — ink gray. All body text, UI labels. Dark enough
+     for WCAG AA on Blanc Cassé, warm enough to avoid pure black. */
+  --text: #2D2D2D;
+  --text-secondary: #6B6B6B;
+  --text-tertiary: #9A9A9A;
+  --text-on-primary: #FAF7F0;
+  --text-on-secondary: #FAF7F0;
+
+  /* ── Borders & Dividers ──────────────────────────────────── */
+
+  /* Bleu Cahier — notebook-rule blue. Structural only: fine lines,
+     subtle dividers. Never for text or fills. 1px at 30% max. */
+  --border: rgba(168, 195, 217, 0.35);
+  --border-light: rgba(168, 195, 217, 0.2);
   --border-focus: var(--primary);
-  --divider: rgba(0, 0, 0, 0.06);
+  --divider: rgba(168, 195, 217, 0.25);
 
-  --soft-gray: #F5F5F4;
+  --soft-gray: #F0EDE4;
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.08), 0 10px 10px rgba(0, 0, 0, 0.03);
-  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
-  --shadow-glow-accent: 0 0 20px rgba(245, 158, 11, 0.15);
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(27, 42, 74, 0.04);
+  --shadow-sm: 0 1px 3px rgba(27, 42, 74, 0.06), 0 1px 2px rgba(27, 42, 74, 0.04);
+  --shadow-md: 0 4px 6px rgba(27, 42, 74, 0.05), 0 2px 4px rgba(27, 42, 74, 0.04);
+  --shadow-lg: 0 10px 15px rgba(27, 42, 74, 0.06), 0 4px 6px rgba(27, 42, 74, 0.04);
+  --shadow-xl: 0 20px 25px rgba(27, 42, 74, 0.08), 0 10px 10px rgba(27, 42, 74, 0.03);
+  --shadow-2xl: 0 25px 50px rgba(27, 42, 74, 0.12);
+  --shadow-glow: 0 0 20px rgba(27, 42, 74, 0.1);
+  --shadow-glow-accent: 0 0 20px rgba(201, 162, 75, 0.15);
 
+  /* ── Radii ───────────────────────────────────────────────── */
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -72,6 +101,7 @@
   --radius-2xl: 24px;
   --radius-full: 9999px;
 
+  /* ── Spacing ─────────────────────────────────────────────── */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -85,12 +115,27 @@
   --space-16: 64px;
   --space-20: 80px;
 
-  --font-heading: 'Playfair Display', 'Noto Naskh Arabic', 'Noto Sans Arabic', Georgia, serif;
-  --font-body: 'Inter', 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-sans: 'Inter', 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-arabic: 'Cairo', 'Noto Sans Arabic', 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  /* ── Typography ──────────────────────────────────────────── */
+
+  /* Display: Fraunces — refined French-feeling serif. Headlines
+     and wordmark only. Set with generous letter-spacing. */
+  --font-heading: 'Fraunces', 'Noto Naskh Arabic', Georgia, serif;
+
+  /* Body: Inter — clean, legible grotesk. All body copy, UI
+     labels, Arabic-paired contexts. */
+  --font-body: 'Inter', 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', 'Cairo', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic: 'Cairo', 'Noto Sans Arabic', 'Inter', sans-serif;
+
+  /* Manuscript: Caveat — restrained handwriting. Used ONLY for
+     the signature line element or a single accent word.
+     Maximum one use per composition. */
+  --font-manuscript: 'Caveat', cursive;
+
+  /* Data: JetBrains Mono — for numbers, codes. */
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
+  /* ── Type Scale (editorial) ──────────────────────────────── */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -101,20 +146,24 @@
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
 
-  --leading-tight: 1.25;
+  /* ── Line Heights ────────────────────────────────────────── */
+  --leading-tight: 1.2;
   --leading-normal: 1.5;
   --leading-relaxed: 1.75;
 
+  /* ── Font Weights ────────────────────────────────────────── */
   --font-normal: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
 
+  /* ── Transitions ─────────────────────────────────────────── */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
+  /* ── Z-Index ─────────────────────────────────────────────── */
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-overlay: 300;
@@ -124,72 +173,77 @@
   --z-tooltip: 700;
   --z-spinner: 800;
 
+  /* ── Layout ──────────────────────────────────────────────── */
   --sidebar-width: 260px;
   --sidebar-collapsed-width: 72px;
   --top-navbar-height: 72px;
   --page-padding: 32px;
 
+  /* ── Glass ───────────────────────────────────────────────── */
   --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(168, 195, 217, 0.3);
   --glass-blur: blur(24px);
 }
 
+/* ============================================================
+   DARK MODE
+   ============================================================ */
 [data-theme='dark'] {
-  --primary: #34D399;
-  --primary-light: #6EE7B7;
-  --primary-dark: #10B981;
-  --primary-surface: rgba(52, 211, 153, 0.12);
-  --primary-on: #0C1222;
+  --primary: #A8C3D9;
+  --primary-light: #C4D8E8;
+  --primary-dark: #7FA8C4;
+  --primary-surface: rgba(168, 195, 217, 0.1);
+  --primary-on: #0F1A30;
 
-  --secondary: #60A5FA;
-  --secondary-light: #93C5FD;
-  --secondary-surface: rgba(96, 165, 250, 0.12);
-  --secondary-on: #0C1222;
+  --secondary: #C4868F;
+  --secondary-light: #D4A0A8;
+  --secondary-surface: rgba(196, 134, 143, 0.1);
+  --secondary-on: #0F1A30;
 
-  --accent: #FBBF24;
-  --accent-light: #FCD34D;
-  --accent-surface: rgba(251, 191, 36, 0.12);
-  --accent-on: #0C1222;
+  --accent: #D4B56A;
+  --accent-light: #E0C882;
+  --accent-surface: rgba(212, 181, 106, 0.1);
+  --accent-on: #0F1A30;
 
-  --success: #34D399;
-  --success-light: #6EE7B7;
-  --success-surface: rgba(52, 211, 153, 0.12);
-  --success-on: #0C1222;
+  --success: #5AAF8A;
+  --success-light: #7AC4A4;
+  --success-surface: rgba(90, 175, 138, 0.1);
+  --success-on: #0F1A30;
 
-  --danger: #F87171;
-  --danger-light: #FCA5A5;
-  --danger-surface: rgba(248, 113, 113, 0.12);
-  --danger-on: #ffffff;
+  --danger: #D47070;
+  --danger-light: #E09090;
+  --danger-surface: rgba(212, 112, 112, 0.1);
+  --danger-on: #FAF7F0;
 
-  --warning: #FBBF24;
-  --warning-light: #FCD34D;
-  --warning-surface: rgba(251, 191, 36, 0.12);
-  --warning-on: #0C1222;
+  --warning: #D4A017;
+  --warning-light: #E0B840;
+  --warning-surface: rgba(212, 160, 23, 0.1);
+  --warning-on: #0F1A30;
 
-  --info: #60A5FA;
-  --info-light: #93C5FD;
-  --info-surface: rgba(96, 165, 250, 0.12);
-  --info-on: #0C1222;
+  --info: #5AABCC;
+  --info-light: #7AC0D8;
+  --info-surface: rgba(90, 171, 204, 0.1);
+  --info-on: #0F1A30;
 
-  --background: #0C1222;
-  --surface: #162032;
-  --surface-variant: #1E2D45;
-  --surface-hover: #243352;
-  --surface-elevated: #1E2D45;
-  --surface-overlay: rgba(255, 255, 255, 0.04);
+  --background: #0F1A30;
+  --surface: #162240;
+  --surface-variant: #1E2D4A;
+  --surface-hover: #263758;
+  --surface-elevated: #1E2D4A;
+  --surface-overlay: rgba(168, 195, 217, 0.04);
 
-  --text: #F0F4F8;
-  --text-secondary: #8899AA;
-  --text-tertiary: #5A6B7D;
-  --text-on-primary: #0C1222;
-  --text-on-secondary: #0C1222;
+  --text: #E8E4DC;
+  --text-secondary: #9AA8B8;
+  --text-tertiary: #6B7A8C;
+  --text-on-primary: #0F1A30;
+  --text-on-secondary: #0F1A30;
 
-  --border: #243352;
-  --border-light: #1E2D45;
+  --border: rgba(168, 195, 217, 0.15);
+  --border-light: rgba(168, 195, 217, 0.08);
   --border-focus: var(--primary);
-  --divider: rgba(255, 255, 255, 0.06);
+  --divider: rgba(168, 195, 217, 0.1);
 
-  --soft-gray: #1E2D45;
+  --soft-gray: #1E2D4A;
 
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -197,13 +251,15 @@
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.18);
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(52, 211, 153, 0.2);
-  --shadow-glow-accent: 0 0 20px rgba(251, 191, 36, 0.2);
+  --shadow-glow: 0 0 20px rgba(168, 195, 217, 0.12);
+  --shadow-glow-accent: 0 0 20px rgba(212, 181, 106, 0.15);
 
-  --glass-bg: rgba(22, 32, 50, 0.7);
-  --glass-border: rgba(36, 51, 82, 0.5);
+  --glass-bg: rgba(15, 26, 48, 0.75);
+  --glass-border: rgba(168, 195, 217, 0.12);
   --glass-blur: blur(24px);
 }
+
+/* ── Animations ────────────────────────────────────────────── */
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -257,4 +313,9 @@
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+@keyframes traitDraw {
+  from { stroke-dashoffset: 600; }
+  to { stroke-dashoffset: 0; }
 }
